@@ -177,6 +177,7 @@ $('.featured-slider').owlCarousel({
 	}
 })
 
+
 // Date Slider
 $('.date-slider').owlCarousel({
 	loop:false,
