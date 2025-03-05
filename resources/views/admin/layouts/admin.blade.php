@@ -31,6 +31,29 @@
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/daterangepicker/daterangepicker.css') }}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('assets/admin/plugins/summernote/summernote-bs4.min.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+<style>
+  /* Empêcher la sidebar de chevaucher le formulaire */
+body {
+    padding-left: 30px; /* Ajuste cette valeur en fonction de la largeur de ta sidebar */
+}
+
+/* Centrer et espacer le formulaire */
+.card {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Espacer les champs du formulaire */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Style pour le bouton de recadrage */
+.btn-primary {
+    margin-top: 1rem;
+}
+</style>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -101,6 +124,8 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <!-- script src="{{ asset('assets/admin/dist/js/pages/dashboard.js')}}"></ sceipt  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Cropper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
 
     </body>
 </html>
