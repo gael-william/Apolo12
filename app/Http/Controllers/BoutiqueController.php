@@ -131,4 +131,12 @@ public function destroy($id)
 
     return redirect()->route('admin.boutique.index')->with('success', 'Boutique supprimée avec succès');
 }
+
+
+public function show_admin($id)
+{
+    $boutique = Boutique::findOrFail($id);
+    return view('admin.boutique.show', compact('boutique'));
+}
+
 }

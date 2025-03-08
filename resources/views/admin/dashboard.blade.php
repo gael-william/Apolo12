@@ -40,13 +40,13 @@
                         <div class="col-lg-3 col-6">
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    {{-- <h3>{{ $stats['products'] }}</h3> --}}
+                                    <h3>{{ $stats['products'] }}</h3>
                                     <p>Produits</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                {{-- <a href="{{ route('admin.home') }}" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a> --}}
+                                <a href="{{ route('admin.boutique.index') }}" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
 

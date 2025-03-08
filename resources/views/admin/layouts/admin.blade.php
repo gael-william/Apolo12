@@ -52,7 +52,27 @@ body {
 /* Style pour le bouton de recadrage */
 .btn-primary {
     margin-top: 1rem;
+    
 }
+</style>
+
+<style>
+  .product-card {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-65px);
+}
+
+.product-image {
+    /* height: 200px; */
+    /* object-fit: cover; */
+    border-bottom: 1px solid #ddd;
+}
+
 </style>
 </head>
 

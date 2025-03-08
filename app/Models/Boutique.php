@@ -20,6 +20,12 @@ class Boutique extends Model
             'phone',
             'business_type'
         ];
+
+
+        public function products()
+    {
+        return $this->hasMany(Product::class, 'boutique_id');
+    }
     
 }
 

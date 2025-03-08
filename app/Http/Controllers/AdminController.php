@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function dashboard()
     {
         $stats = [
-            // 'products' => Product::count(),
+            'products' => Product::count(),
             // 'orders' => Commande::count(),
             'shops' => Boutique::count(),
             // 'users' => User::count(),

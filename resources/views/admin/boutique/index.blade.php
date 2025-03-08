@@ -70,7 +70,7 @@
                                                 <tr>
                                                     <td>{{ $boutique->id }}</td>
                                                     <td>
-                                                        @if($boutique->image)
+                                                        @if ($boutique->image)
                                                             <img src="{{ asset('storage/' . $boutique->image) }}"
                                                                 alt="{{ $boutique->name }}" width="50px">
                                                         @else
@@ -81,15 +81,15 @@
                                                     <td>{{ $boutique->description }}</td>
                                                     <td>{{ ucfirst($boutique->business_type) }}</td>
                                                     <td>
-                                                        {{-- <a href="{{ route('admin.boutiques.show', $boutique->id) }}"
-                                                            class="btn btn-primary btn-sm" title="Voir les détails">
-                                                            <i class="fa fa-eye"></i>
-                                                        </a> --}}
+
                                                         <a href="{{ route('admin.boutiques.edit', $boutique->id) }}"
                                                             class="btn btn-warning btn-sm" title="Modifier">
                                                             <i class="fa fa-edit"></i>
                                                         </a>
-
+                                                        <a href="{{ route('admin.boutiques.show', $boutique->id) }}"
+                                                            class="btn btn-primary btn-sm" title="Voir les détails">
+                                                            <i class="fa fa-eye"></i>
+                                                        </a>
                                                         <form method="POST" style="display:inline"
                                                             action="{{ route('admin.boutiques.destroy', $boutique->id) }}">
                                                             @csrf
@@ -98,7 +98,8 @@
                                                                 title="Supprimer">
                                                                 <i class="fa fa-trash"></i>
                                                             </button>
-                                                        </form>                                                   
+                                                        </form>
+                                                      
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -111,7 +112,7 @@
                                         @endif
 
                                     </tbody>
-                                    
+
                                 </table>
                             </div>
                             <!-- /.card-body -->
