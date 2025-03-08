@@ -8,6 +8,11 @@
 .search120 {
     display: none;
     margin-left: 0 !important;
+    /* visibility: visible;
+    display: flex;
+    align-items: center;
+    text-align: center; */
+    
 }
 
 .navbar-nav .nav-link {
