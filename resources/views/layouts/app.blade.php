@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 	
 <!-- Mirrored from gambolthemes.net/html-items/gambo_supermarket_demo_new/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Aug 2024 12:34:38 GMT -->

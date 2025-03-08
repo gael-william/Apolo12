@@ -103,7 +103,7 @@ $('.offers-banner').owlCarousel({
 	nav:false,
 	dots:false,
     autoplay:true,
-    autoplayTimeout: 3000,
+    autoplayTimeout: 2000,
     autoplayHoverPause:true,
 	responsive:{
 		0:{
@@ -133,10 +133,10 @@ $('.cate-slider').owlCarousel({
 	navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
 	responsive:{
 		0:{
-			items:2
+			items:3
 		},
 		600:{
-			items:2
+			items:4
 		},
 		1000:{
 			items:4
@@ -151,31 +151,25 @@ $('.cate-slider').owlCarousel({
 })
 
 // Featured Slider
-$('.featured-slider').owlCarousel({
-	items: 8,
-	loop:false,
-	margin:15,
-	nav:true,
-	dots:false,
-	navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
-	responsive:{
-		0:{
-			items:1
-		},
-		600:{
-			items:2
-		},
-		1000:{
-			items:3
-		},
-		1200:{
-			items:4
-		},
-		1400:{
-			items:5
-		}
-	}
-})
+$(document).ready(function(){
+    $(".featured-slider").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        responsive: {
+            0: {  // Petits écrans (mobile)
+                items: 2, 
+                stagePadding: 20, // Ajoute du padding pour éviter les coupures
+            },
+            768: { // Moyens écrans (tablettes)
+                items: 2
+            },
+            1024: { // Grands écrans (desktop)
+                items: 5
+            }
+        }
+    });
+});
 
 
 // Date Slider
