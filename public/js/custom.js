@@ -154,8 +154,10 @@ $('.cate-slider').owlCarousel({
 $(document).ready(function(){
     $(".featured-slider").owlCarousel({
         loop: true,
-        margin: 10,
+        margin: 0,
         nav: true,
+		navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
+		dots:false,
         responsive: {
             0: {  // Petits écrans (mobile)
                 items: 2, 
