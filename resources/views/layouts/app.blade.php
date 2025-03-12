@@ -27,7 +27,9 @@
 		<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">	
-		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+
 	</head>
 
 <body>
@@ -51,9 +53,8 @@
 	<script src="js/offset_overlay.js"></script>
 	<script src="js/night-mode.js"></script>
 
+	
 	<!-- mes modifications  --> 
-
-
 	
 
 

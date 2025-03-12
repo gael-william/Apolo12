@@ -146,4 +146,15 @@ public function destroy($boutiqueId, $productId)
         $products = Product::where('category', $category)->get();
         return view('admin.produit.index', compact('products', 'category'));
     }
+
+    public function welcome()
+{
+    $produitsAlimentation = Product::where('category', 'Alimentation')->latest()->take(8)->get();
+    $produitsCosmetique = Product::where('category', 'Cosmétique')->latest()->take(8)->get();
+    $produitsPharmacopee = Product::where('category', 'Pharmacopée')->latest()->take(8)->get();
+    
+    return view('welcome', compact('produitsAlimentation', 'produitsCosmetique', 'produitsPharmacopee'));
+}
+
+    
 }

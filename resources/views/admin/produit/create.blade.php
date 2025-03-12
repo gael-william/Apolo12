@@ -59,9 +59,9 @@
                     </form>
 
                     <!-- Bouton pour recadrer -->
-                    <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#cropperModal">
+                    {{-- <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#cropperModal">
                         Recadrer l'image
-                    </button>
+                    </button> --}}
 
                     <!-- Modale de recadrage -->
                     <div class="modal fade" id="cropperModal" tabindex="-1" role="dialog" aria-labelledby="cropperModalLabel" aria-hidden="true">
@@ -77,7 +77,7 @@
                                     <img id="preview" src="{{ asset('images/default.png') }}" class="img-fluid" style="max-width: 100%; display: block;">
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                                    {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button> --}}
                                     <button type="button" class="btn btn-success" id="cropImageBtn">Valider</button>
                                 </div>
                             </div>

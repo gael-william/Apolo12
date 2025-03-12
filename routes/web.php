@@ -5,9 +5,12 @@ use App\Http\Controllers\BoutiqueController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [ProductController::class, 'welcome']);
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/admin', function () {
     return redirect()->route('admin.dashboard');
@@ -50,4 +53,5 @@ Route::prefix('admin/produit')->group(function () {
     Route::delete('boutiques/{boutique}/products/{product}', [ProductController::class, 'destroy'])
         ->name('admin.boutiques.products.destroy');
 });
+
 
