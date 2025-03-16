@@ -55,3 +55,4 @@ Route::prefix('admin/produit')->group(function () {
 });
 
 
+Route::get('/seeall', [ProductController::class, 'seeAll'])->name('seeall');

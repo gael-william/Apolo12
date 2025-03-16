@@ -156,5 +156,29 @@ public function destroy($boutiqueId, $productId)
     return view('welcome', compact('produitsAlimentation', 'produitsCosmetique', 'produitsPharmacopee'));
 }
 
+public function seeAll(Request $request)
+{
+    $category = $request->query('category');
+
+    // Récupérer les produits selon la catégorie
+    switch ($category) {
+        case 'alimentation':
+            $produits = Product::where('category', 'Alimentation')->get();
+            break;
+        case 'cosmetique':
+            $produits = Product::where('category', 'Cosmétique')->get();
+            break;
+        case 'pharmacopee':
+            $produits = Product::where('category', 'Pharmacopée')->get();
+            break;
+        default:
+            $produits = Product::all(); // Si aucune catégorie spécifiée, afficher tous les produits
+            break;
+    }
+
+    return view('seeall', compact('produits', 'category'));
+}
+
+
     
 }
