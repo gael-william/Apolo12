@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Boutique;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -137,6 +138,15 @@ public function show_admin($id)
 {
     $boutique = Boutique::findOrFail($id);
     return view('admin.boutique.show', compact('boutique'));
+}
+
+
+public function show($id)
+{
+    $boutique = Boutique::findOrFail($id);
+    $produits = Product::where('boutique_id', $id)->get();
+    
+    return view('showboutique', compact('boutique', 'produits'));
 }
 
 }

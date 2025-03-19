@@ -23,9 +23,11 @@
 					<div class="col-lg-12">
 						<div class="product-top-dt">
 							<div class="product-left-title">
-								<h2>Vegetables & Fruits</h2>
-							</div>
-							<a href="#" class="filter-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilter" aria-controls="offcanvasFilter">Filters</a>
+								<a href="#" class="category_drop hover-btn" data-bs-toggle="modal"
+								data-bs-target="#category_model" title="Categories"><i class="uil uil-apps"></i><span
+									class="cate__icon">Selectionner la Catégories</span></a>							</div>
+							{{-- <a href="#" class="filter-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilter" aria-controls="offcanvasFilter">Filters</a> --}}
+							
 							<div class="product-sort main-form">
 								<select class="selectpicker" data-width="25%">
 									<option value="0">Popularity</option>

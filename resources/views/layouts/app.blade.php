@@ -15,12 +15,13 @@
 		<link rel="icon" type="image/png" href="images/fav.png">
 		
 		<!-- Stylesheets -->
+		
 		<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
 		<link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>
 		<link href="css/style.css" rel="stylesheet">
 		<link href="css/responsive.css" rel="stylesheet">
 		<link href="css/night-mode.css" rel="stylesheet">
-		
+
 		<!-- Vendor Stylesheets -->
 		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 		<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
@@ -28,7 +29,17 @@
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<link href="vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">	
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-
+		
+		<link href="{{ asset('vendor/unicons-2.0.1/css/unicons.css') }}" rel="stylesheet">
+		<link href="{{ asset('css/style.css') }}" rel="stylesheet">
+		<link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+		<link href="{{ asset('css/night-mode.css') }}" rel="stylesheet">
+		<link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('vendor/OwlCarousel/assets/owl.carousel.css') }}" rel="stylesheet">
+		<link href="{{ asset('vendor/OwlCarousel/assets/owl.theme.default.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+		<link href="{{ asset('vendor/bootstrap-select/css/bootstrap-select.min.css') }}" rel="stylesheet">
+		
 
 	</head>
 
@@ -56,7 +67,15 @@
 	
 	<!-- mes modifications  --> 
 	
-
+	<script src="{{ asset('js/jquery.min.js') }}"></script>
+	<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+	<script src="{{ asset('vendor/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
+	<script src="{{ asset('vendor/OwlCarousel/owl.carousel.js') }}"></script>
+	<script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
+	<script src="{{ asset('js/custom.js') }}"></script>
+	<script src="{{ asset('js/offset_overlay.js') }}"></script>
+	<script src="{{ asset('js/night-mode.js') }}"></script>
+	
 
 	
 	
