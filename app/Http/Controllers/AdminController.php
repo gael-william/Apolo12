@@ -17,7 +17,7 @@ class AdminController extends Controller
             'products' => Product::count(),
             // 'orders' => Commande::count(),
             'shops' => Boutique::count(),
-            // 'users' => User::count(),
+            'users' => User::count(),
             // 'ads' => Publicite::count(),
         ];
 

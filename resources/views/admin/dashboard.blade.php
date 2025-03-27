@@ -70,13 +70,13 @@
                         <div class="col-lg-3 col-6">
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    {{-- <h3>{{ $stats['users'] }}</h3> --}}
+                                    <h3>{{ $stats['users'] }}</h3>
                                     <p>Utilisateurs</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-person"></i>
                                 </div>
-                                {{-- <a href="{{ route('admin.utilisateurs.index') }}" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a> --}}
+                                <a href="{{ route('admin.users.index') }}" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
 
