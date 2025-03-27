@@ -1,47 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-	
+
 <!-- Mirrored from gambolthemes.net/html-items/gambo_supermarket_demo_new/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Aug 2024 12:34:38 GMT -->
+
 <head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
-		<meta name="description" content="Gambolthemes">
-		<meta name="author" content="Gambolthemes">		
-		<title>Gambo - Index</title>
-		
-		<!-- Favicon Icon -->
-		<link rel="icon" type="image/png" href="images/fav.png">
-		
-		<!-- Stylesheets -->
-		
-		<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-		<link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>
-		<link href="css/style.css" rel="stylesheet">
-		<link href="css/responsive.css" rel="stylesheet">
-		<link href="css/night-mode.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=9">
+    <meta name="description" content="Gambolthemes">
+    <meta name="author" content="Gambolthemes">
+    <title>Gambo - Index</title>
 
-		<!-- Vendor Stylesheets -->
-		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-		<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
-		<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
-		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<link href="vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">	
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-		
-		<link href="{{ asset('vendor/unicons-2.0.1/css/unicons.css') }}" rel="stylesheet">
-		<link href="{{ asset('css/style.css') }}" rel="stylesheet">
-		<link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
-		<link href="{{ asset('css/night-mode.css') }}" rel="stylesheet">
-		<link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
-		<link href="{{ asset('vendor/OwlCarousel/assets/owl.carousel.css') }}" rel="stylesheet">
-		<link href="{{ asset('vendor/OwlCarousel/assets/owl.theme.default.min.css') }}" rel="stylesheet">
-		<link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-		<link href="{{ asset('vendor/bootstrap-select/css/bootstrap-select.min.css') }}" rel="stylesheet">
-		
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/png" href="images/fav.png">
 
-	</head>
+    <!-- Stylesheets -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link href='vendor/unicons-2.0.1/css/unicons.css' rel='stylesheet'>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/night-mode.css" rel="stylesheet">
+
+    <!-- Vendor Stylesheets -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
+    <link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <link href="{{ asset('vendor/unicons-2.0.1/css/unicons.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/night-mode.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/OwlCarousel/assets/owl.carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/OwlCarousel/assets/owl.theme.default.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('vendor/bootstrap-select/css/bootstrap-select.min.css') }}" rel="stylesheet">
+
+	<style>
+		.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-product-img img {
+   
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.cart-text {
+    flex-grow: 1;
+}
+
+.cart-item-price {
+    font-weight: bold;
+    color: #ff6600;
+}
+
+.cart-close-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+	</style>
+
+</head>
 
 <body>
 
@@ -55,31 +89,225 @@
 
 
     <!-- Javascripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>	
-	<script src="vendor/OwlCarousel/owl.carousel.js"></script>
-	<script src="js/jquery.countdown.min.js"></script>
-	<script src="js/custom.js"></script>
-	<script src="js/offset_overlay.js"></script>
-	<script src="js/night-mode.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="vendor/OwlCarousel/owl.carousel.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/offset_overlay.js"></script>
+    <script src="js/night-mode.js"></script>
 
-	
-	<!-- mes modifications  --> 
-	
-	<script src="{{ asset('js/jquery.min.js') }}"></script>
-	<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-	<script src="{{ asset('vendor/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
-	<script src="{{ asset('vendor/OwlCarousel/owl.carousel.js') }}"></script>
-	<script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
-	<script src="{{ asset('js/custom.js') }}"></script>
-	<script src="{{ asset('js/offset_overlay.js') }}"></script>
-	<script src="{{ asset('js/night-mode.js') }}"></script>
-	
 
-	
-	
+    <!-- mes modifications  -->
+
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap-select/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('vendor/OwlCarousel/owl.carousel.js') }}"></script>
+    <script src="{{ asset('js/jquery.countdown.min.js') }}"></script>
+    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="{{ asset('js/offset_overlay.js') }}"></script>
+    <script src="{{ asset('js/night-mode.js') }}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || []; // Charger le panier depuis le localStorage
+            let cartContainer = document.querySelector(".side-cart-items");
+            let totalElement = document.querySelector(".main-total-cart span");
+            let checkoutButton = document.querySelector(".checkout-cart");
+            let emptyCartMessage = document.querySelector("#empty-cart-message");
+
+			function updateCartCount() {
+    let cartCount = cart.reduce((sum, product) => sum + product.quantity, 0);
+    document.getElementById("cart-count-btn").textContent = cartCount;
+    document.getElementById("cart-count").textContent = `(${cartCount} Items)`;
+}
+
+            function updateCartUI() {
+                cartContainer.innerHTML = "";
+                let total = 0;
+
+                if (cart.length === 0) {
+                    emptyCartMessage.style.display = "block";
+                    totalElement.textContent = "0 FCFA";
+                    checkoutButton.style.display = "none";
+                } else {
+                    emptyCartMessage.style.display = "none";
+                    checkoutButton.style.display = "block";
+                }
+
+                cart.forEach(product => {
+                    total += product.price * product.quantity;
+                    cartContainer.innerHTML += `
+                <div class="cart-item" data-id="${product.id}">
+                    <div class="cart-product-img">
+                        <img src="${product.image}" alt="${product.name}">
+                    </div>
+                    <div class="cart-text">
+                        <h4>${product.name}</h4>
+                        <div class="qty-group">
+                            <div class="quantity buttons-added">
+                                <input type="button" value="-" class="minus-btn" data-id="${product.id}">
+                                <input type="number" value="${product.quantity}" class="input-text qty text" readonly>
+                                <input type="button" value="+" class="plus-btn" data-id="${product.id}">
+                            </div>
+                            <div class="cart-item-price">${product.price * product.quantity} FCFA</div>
+                        </div>
+                        <button type="button" class="cart-close-btn" data-id="${product.id}">
+                            <i class="uil uil-multiply"></i>
+                        </button>
+                    </div>
+                </div>`;
+                });
+
+                totalElement.textContent = total + " FCFA";
+                localStorage.setItem("cart", JSON.stringify(cart)); // Sauvegarder dans localStorage
+                bindCartEvents();
+				updateCartCount(); // Met à jour le compteur d'articles
+
+            }
+			
+
+            function bindCartEvents() {
+                document.querySelectorAll(".plus-btn").forEach(btn => {
+                    btn.addEventListener("click", function() {
+                        let productId = this.getAttribute("data-id");
+                        let product = cart.find(p => p.id === productId);
+                        if (product) addToCart(product.id, product.name, product.price, product
+                            .image);
+                    });
+                });
+
+                document.querySelectorAll(".minus-btn").forEach(btn => {
+                    btn.addEventListener("click", function() {
+                        let productId = this.getAttribute("data-id");
+                        removeFromCart(productId);
+                    });
+                });
+
+                document.querySelectorAll(".cart-close-btn").forEach(btn => {
+                    btn.addEventListener("click", function() {
+                        let productId = this.getAttribute("data-id");
+                        cart = cart.filter(p => p.id !== productId);
+                        updateCartUI();
+                    });
+                });
+            }
+
+            function addToCart(id, name, price, image) {
+                let existingProduct = cart.find(p => p.id === id);
+                if (existingProduct) {
+                    existingProduct.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        image,
+                        quantity: 1
+                    });
+                }
+                updateCartUI();
+            }
+
+            function removeFromCart(id) {
+                let productIndex = cart.findIndex(p => p.id === id);
+                if (productIndex !== -1) {
+                    if (cart[productIndex].quantity > 1) {
+                        cart[productIndex].quantity -= 1;
+                    } else {
+                        cart.splice(productIndex, 1);
+                    }
+                }
+                updateCartUI();
+            }
+
+            document.querySelectorAll(".plus-btn").forEach(button => {
+                button.addEventListener("click", function() {
+                    let productContainer = this.closest(".product-item-container");
+                    let productId = productContainer.querySelector(".open-modal").getAttribute(
+                        "data-id");
+                    let productName = productContainer.querySelector(".open-modal").getAttribute(
+                        "data-name");
+                    let productPrice = parseFloat(productContainer.querySelector(".open-modal")
+                        .getAttribute("data-price"));
+                    let productImage = productContainer.querySelector(".product-image").src;
+
+                    addToCart(productId, productName, productPrice, productImage);
+                });
+            });
+
+            document.querySelectorAll(".minus-btn").forEach(button => {
+                button.addEventListener("click", function() {
+                    let productContainer = this.closest(".product-item-container");
+                    let productId = productContainer.querySelector(".open-modal").getAttribute(
+                        "data-id");
+                    removeFromCart(productId);
+                });
+            });
+
+            updateCartUI(); // Mise à jour du panier au chargement de la page
+        });
+    </script>
+
+
+
+
+
+    {{-- script pour le modal --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".open-modal").forEach(button => {
+                button.addEventListener("click", function() {
+                    let name = this.getAttribute("data-name");
+                    let price = this.getAttribute("data-price");
+                    let description = this.getAttribute("data-description");
+                    let image = this.getAttribute("data-image");
+
+                    document.getElementById("modalProductName").textContent = name;
+                    document.getElementById("modalProductPrice").textContent = price;
+                    document.getElementById("modalProductDescription").textContent = description;
+                    document.getElementById("modalProductImage").src = image;
+
+                    let productModal = new bootstrap.Modal(document.getElementById("productModal"));
+                    productModal.show();
+                });
+            });
+        });
+    </script>
+
+    {{-- script pour les categrories --}}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const categoryFilters = document.querySelectorAll(".category-filter");
+            const products = document.querySelectorAll(".product-item-container");
+
+            categoryFilters.forEach(filter => {
+                filter.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const selectedCategory = this.getAttribute("data-category");
+
+                    products.forEach(product => {
+                        if (product.getAttribute("data-category") === selectedCategory ||
+                            selectedCategory === "all") {
+                            product.style.display =
+                                "block"; // Afficher le produit correspondant
+                        } else {
+                            product.style.display = "none"; // Masquer les autres
+                        }
+                    });
+
+                    // Fermer le modal après sélection
+                    let categoryModal = bootstrap.Modal.getInstance(document.getElementById(
+                        'category_model'));
+                    categoryModal.hide();
+                });
+            });
+        });
+    </script>
 </body>
 
 <!-- Mirrored from gambolthemes.net/html-items/gambo_supermarket_demo_new/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Aug 2024 12:35:36 GMT -->
+
 </html>

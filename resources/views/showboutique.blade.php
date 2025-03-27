@@ -39,56 +39,55 @@
             </div>
         </div>
 
-     <!-- Produits de la boutique -->
-<div class="all-product-grid">
-    <div class="container">
-        <div class="product-list-view">
-            <div class="row">
-                <a href="#" class="category_drop hover-btn" data-bs-toggle="modal"
-                    data-bs-target="#category_model" title="Categories">
-                    <i class="uil uil-apps"></i>
-                    <span class="cate__icon">Sélectionner la Catégorie</span>
-                </a>
-                @foreach ($produits as $produit)
-                <div class="col-lg-3 col-md-6 product-item-container" data-category="{{ strtolower($produit->category) }}">
-                    <div class="product-item mb-30">
-                            <img src="{{ asset('storage/' . $produit->image_url) }}"
-                                class="card-img-top product-image" alt="{{ $produit->name }}">
-                            <div class="product-absolute-options">
-                                @if ($produit->discount > 0)
-                                    <span class="offer-badge-1">{{ $produit->discount }}% off</span>
-                                @endif
-                                <span class="like-icon" title="wishlist"></span>
-                            </div>
-                            <div class="product-text-dt">
-                                <p>Available<span>(In Stock)</span></p>
-                                <h4>{{ $produit->name }}</h4>
-                                <div class="product-price">{{ $produit->price }} F CFA</div>
-                                <button class="btn btn-primary open-modal"
-                                    data-id="{{ $produit->id }}"
-                                    data-name="{{ $produit->name }}"
-                                    data-price="{{ $produit->price }}"
-                                    data-description="{{ $produit->description }}"
-                                    data-image="{{ asset('storage/' . $produit->image_url) }}">
-                                    Voir détails
-                                </button>
-                                <div class="qty-cart">
-                                    <div class="quantity buttons_added">
-                                        <input type="button" value="-" class="minus minus-btn">
-                                        <input type="number" step="1" name="quantity" value="1"
-                                            class="input-text qty text">
-                                        <input type="button" value="+" class="plus plus-btn">
+        <!-- Produits de la boutique -->
+        <div class="all-product-grid">
+            <div class="container">
+                <div class="product-list-view">
+                    <div class="row">
+                        <a href="#" class="category_drop hover-btn" data-bs-toggle="modal"
+                            data-bs-target="#category_model" title="Categories">
+                            <i class="uil uil-apps"></i>
+                            <span class="cate__icon">Sélectionner la Catégorie</span>
+                        </a>
+                        @foreach ($produits as $produit)
+                            <div class="col-lg-3 col-md-6 product-item-container"
+                                data-category="{{ strtolower($produit->category) }}">
+                                <div class="product-item mb-30">
+                                    <img src="{{ asset('storage/' . $produit->image_url) }}"
+                                        class="card-img-top product-image" alt="{{ $produit->name }}">
+                                    <div class="product-absolute-options">
+                                        @if ($produit->discount > 0)
+                                            <span class="offer-badge-1">{{ $produit->discount }}% off</span>
+                                        @endif
+                                        <span class="like-icon" title="wishlist"></span>
                                     </div>
-                                    <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
+                                    <div class="product-text-dt">
+                                        <p>Available<span>(In Stock)</span></p>
+                                        <h4>{{ $produit->name }}</h4>
+                                        <div class="product-price">{{ $produit->price }} F CFA</div>
+                                        <button class="btn btn-primary open-modal" data-id="{{ $produit->id }}"
+                                            data-name="{{ $produit->name }}" data-price="{{ $produit->price }}"
+                                            data-description="{{ $produit->description }}"
+                                            data-image="{{ asset('storage/' . $produit->image_url) }}">
+                                            Voir détails
+                                        </button>
+                                        <div class="qty-cart">
+                                            <div class="quantity buttons_added">
+                                                <input type="button" value="-" class="minus minus-btn">
+                                                <input type="number" step="1" name="quantity" value="0"
+                                                    class="input-text qty text">
+                                                <input type="button" value="+" class="plus plus-btn">
+                                            </div>
+                                            <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
         <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
@@ -115,49 +114,6 @@
 
     </div>
 @endsection
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll(".open-modal").forEach(button => {
-            button.addEventListener("click", function() {
-                let name = this.getAttribute("data-name");
-                let price = this.getAttribute("data-price");
-                let description = this.getAttribute("data-description");
-                let image = this.getAttribute("data-image");
 
-                document.getElementById("modalProductName").textContent = name;
-                document.getElementById("modalProductPrice").textContent = price;
-                document.getElementById("modalProductDescription").textContent = description;
-                document.getElementById("modalProductImage").src = image;
 
-                let productModal = new bootstrap.Modal(document.getElementById("productModal"));
-                productModal.show();
-            });
-        });
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const categoryFilters = document.querySelectorAll(".category-filter");
-    const products = document.querySelectorAll(".product-item-container");
 
-    categoryFilters.forEach(filter => {
-        filter.addEventListener("click", function(event) {
-            event.preventDefault();
-            const selectedCategory = this.getAttribute("data-category");
-
-            products.forEach(product => {
-                if (product.getAttribute("data-category") === selectedCategory || selectedCategory === "all") {
-                    product.style.display = "block";  // Afficher le produit correspondant
-                } else {
-                    product.style.display = "none";   // Masquer les autres
-                }
-            });
-
-            // Fermer le modal après sélection
-            let categoryModal = bootstrap.Modal.getInstance(document.getElementById('category_model'));
-            categoryModal.hide();
-        });
-    });
-});
-
-</script>

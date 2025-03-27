@@ -26,7 +26,7 @@
                         {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
                     @endauth
                     @guest
-                        {{-- <a href="{{ route('auth.login') }}" class="dropdown-item">Se connecter</a> --}}
+                        <a href="{{ route('auth.login') }}" class="dropdown-item">Se connecter</a>
                     @endguest
                 </span>
   
