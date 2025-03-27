@@ -214,6 +214,7 @@ h1 {
     
     
     
+    
 
 h3 {
 	font-size: 1.375em;
@@ -2157,33 +2158,63 @@ i.icon1 {
     border-color: #1e7e34; /* Bordure qui devient plus foncée */
 }
 
-
 .category-item {
-    width: 100%;
-	display: block;
+    width: 100%;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 8px;
     text-align: center;
-    padding: 20px;
+    padding: 10px; /* 📌 Padding réduit */
+    margin: 0;
+    transition: transform 0.3s ease-in-out;
+    
 }
 
+.category-item:hover {
+    transform: scale(1.05);
+}
+
+/* Image de la catégorie */
 .cate-img {
-    width: 50px;
-    text-align: center;
-    display: inline-block;
+    width: 90px; /* 📌 Légère réduction */
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .cate-img img {
-    display: inline-block;
+    max-width: 100%;
+    max-height: 70%;
+    object-fit: cover;
+    border-radius: 6px; /* 📌 Coins légèrement adoucis */
 }
 
+/* Titre de la catégorie */
 .category-item h4 {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 15px; /* 📌 Taille de police optimisée */
+    font-weight: 600;
     color: #2b2f4c;
-	margin-top: 15px;
-    text-align: center;
+    margin-top: 5px; /* 📌 Espacement réduit */
 }
+
+/* 📱 Responsive : ajustement sur petits écrans */
+@media (max-width: 768px) {
+    .category-item {
+        padding: 8px; /* 📌 Encore plus compact sur mobile */
+    }
+    .cate-img {
+        width: 70px;
+        height: 70px;
+    }
+    .category-item h4 {
+        font-size: 13px;
+    }
+}
+
 
 .cate-slider .owl-nav {
     margin-top: 0 !important;
@@ -2386,39 +2417,42 @@ span.like-icon {
 .cart-icon:hover {
     color: #f55d2c;
 }
-.featured-slider .owl-nav .owl-prev,
-.featured-slider .owl-nav .owl-next {
-    font-size: 20px !important;
-    position: absolute;
-    top: 35%;
-    text-align: center;
-    height: 30px !important;
-    width: 30px !important;
-    padding: 0 !important;
-    color: #2b2f4c !important; /* Couleur de l'icône */
-    background: #fff !important;
-    border-radius: 5px !important;
-    border: 1px solid #e5e5e5 !important;
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
-}
 
-.featured-slider .owl-nav .owl-prev {
-    left: -20px;
-}
+
+
+/* *******************   featured slider************************* */
 
 .featured-slider .owl-nav .owl-next {
-    right: -20px;
+	font-size: 20px !important;
+	position: absolute;
+	right: -20px;
+	top: 42%;
+	padding: 0 !important;
+	text-align: center;
+	height: 30px !important;
+	width: 30px !important;
+	color: #2b2f4c !important;
+	background: #fff !important;
+	border-radius: 5px !important;
+	border: 1px solid #e5e5e5 !important;
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
 }
 
-.featured-slider .owl-nav .owl-prev:hover,
+.featured-slider .owl-nav .owl-prev:hover {
+	color: #fff !important;
+	opacity: 1;
+	background: #f55d2c !important;
+	border: 1px solid #f55d2c !important;
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
+}	
+
 .featured-slider .owl-nav .owl-next:hover {
-    color: #fff !important;
-    background: #E67E22 !important; /* Orange élégant */
-    border: 1px solid #E67E22 !important; /* Orange élégant */
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
+	color: #fff !important;
+	opacity: 1;
+	border: 1px solid #f55d2c !important;
+	background: #f55d2c !important;
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.07);
 }
-
-
 
 
 
@@ -6996,6 +7030,25 @@ Par défaut, cacher la barre de recherche
     }
 }
 
+
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2b2f4c;
+    text-align: left;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+}
 
 
 

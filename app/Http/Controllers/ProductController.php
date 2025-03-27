@@ -148,13 +148,15 @@ public function destroy($boutiqueId, $productId)
     }
 
     public function welcome()
-{
-    $produitsAlimentation = Product::where('category', 'Alimentation')->latest()->take(8)->get();
-    $produitsCosmetique = Product::where('category', 'Cosmétique')->latest()->take(8)->get();
-    $produitsPharmacopee = Product::where('category', 'Pharmacopée')->latest()->take(8)->get();
+    {
+        $produitsAlimentation = Product::where('category', 'Alimentation')->latest()->take(8)->get();
+        $produitsCosmetique = Product::where('category', 'Cosmétique')->latest()->take(8)->get();
+        $produitsPharmacopee = Product::where('category', 'Pharmacopée')->latest()->take(8)->get();
+        $boutiques = Boutique::all(); // Récupère toutes les boutiques
     
-    return view('welcome', compact('produitsAlimentation', 'produitsCosmetique', 'produitsPharmacopee'));
-}
+        return view('welcome', compact('produitsAlimentation', 'produitsCosmetique', 'produitsPharmacopee', 'boutiques'));
+    }
+    
 
 public function seeAll(Request $request)
 {

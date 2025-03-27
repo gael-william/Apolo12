@@ -103,7 +103,7 @@ $('.offers-banner').owlCarousel({
 	nav:false,
 	dots:false,
     autoplay:true,
-    autoplayTimeout: 2000,
+    autoplayTimeout: 3000,
     autoplayHoverPause:true,
 	responsive:{
 		0:{
@@ -154,14 +154,14 @@ $('.cate-slider').owlCarousel({
 $(document).ready(function(){
     $(".featured-slider").owlCarousel({
         loop: true,
-        margin: 0,
+        margin: 15,
         nav: true,
 		navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
 		dots:false,
         responsive: {
             0: {  // Petits écrans (mobile)
                 items: 2, 
-                stagePadding: 20, // Ajoute du padding pour éviter les coupures
+                // stagePadding: 20, // Ajoute du padding pour éviter les coupures
             },
             768: { // Moyens écrans (tablettes)
                 items: 2

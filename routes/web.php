@@ -56,3 +56,6 @@ Route::prefix('admin/produit')->group(function () {
 
 
 Route::get('/seeall', [ProductController::class, 'seeAll'])->name('seeall');
+
+Route::get('/boutique/{id}', [BoutiqueController::class, 'show'])->name('boutique.show');
+

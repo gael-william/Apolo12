@@ -108,110 +108,28 @@
         <!-- Categories Start -->
         <div class="section145">
             <div class="container">
+                <h2 class="section-title">Nos boutiques officielles</h2> <!-- Ajout du titre ici -->
                 <div class="row">
-                    <!-- <div class="col-md-12">
-              <div class="main-title-tt">
-               <div class="main-title-left">
-                <span>Shop By</span>
-                <h2>Categories</h2>
-               </div>
-              </div>
-             </div> -->
                     <div class="col-md-12">
                         <div class="owl-carousel cate-slider owl-theme">
-                            <div class="item">
-                                <a href="shop_grid.html" class="category-item">
-                                    <div class="cate-img">
-                                        <!-- <img src="images/category/icon-1.svg" alt=""> -->
-                                    </div>
-                                    <h4>cosmetique</h4>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="shop_grid.html" class="category-item">
-                                    <div class="cate-img">
-                                        <!-- <img src="images/category/icon-1.svg" alt=""> -->
-                                    </div>
-                                    <h4>cosmetique</h4>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="shop_grid.html" class="category-item">
-                                    <div class="cate-img">
-                                        <!-- <img src="images/category/icon-3.svg" alt=""> -->
-                                    </div>
-                                    <h4> cosmetique </h4>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="shop_grid.html" class="category-item">
-                                    <div class="cate-img">
-                                        <!-- <img src="images/category/icon-4.svg" alt=""> -->
-                                    </div>
-                                    <h4> cosmetique </h4>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="shop_grid.html" class="category-item">
-                                    <div class="cate-img">
-                                        <!-- <img src="images/category/icon-5.svg" alt=""> -->
-                                    </div>
-                                    <h4> cosmetique</h4>
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="shop_grid.html" class="category-item">
-                                    <div class="cate-img">
-                                        <!-- <img src="images/category/icon-6.svg" alt=""> -->
-                                    </div>
-                                    <h4> cosmetique </h4>
-                                </a>
-                            </div>
-                            <!-- <div class="item">
-                <a href="shop_grid.html" class="category-item">
-                 <div class="cate-img">
-                  <img src="images/category/icon-7.svg" alt="">
-                 </div>
-                 <h4> Noodles & Sauces </h4>
-                </a>
-               </div>
-               <div class="item">
-                <a href="shop_grid.html" class="category-item">
-                 <div class="cate-img">
-                  <img src="images/category/icon-8.svg" alt="">
-                 </div>
-                 <h4> Personal Care </h4>
-                </a>
-               </div>
-               <div class="item">
-                <a href="shop_grid.html" class="category-item">
-                 <div class="cate-img">
-                  <img src="images/category/icon-9.svg" alt="">
-                 </div>
-                 <h4> Pet Care </h4>
-                </a>
-               </div>
-               <div class="item">
-                <a href="shop_grid.html" class="category-item">
-                 <div class="cate-img">
-                  <img src="images/category/icon-10.svg" alt="">
-                 </div>
-                 <h4> Meat & Seafood </h4>
-                </a>
-               </div>
-               <div class="item">
-                <a href="shop_grid.html" class="category-item">
-                 <div class="cate-img">
-                  <img src="images/category/icon-11.svg" alt="">
-                 </div>
-                 <h4> Electronics </h4>
-                </a>
-               </div> -->
+                            @foreach ($boutiques as $boutique)
+                                <div class="item">
+                                    <a href="{{ route('boutique.show', $boutique->id) }}" class="category-item">
+                                        <div class="cate-img">
+                                            <img src="{{ asset('storage/' . $boutique->image) }}" alt="{{ $boutique->name }}">
+                                        </div>
+                                        <h4>{{ $boutique->name }}</h4>
+                                    </a>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
+
+        <!-- Categories End -->
+
         <!-- Categories End -->
         <!-- Featured Products Start(L'OFFRE DU SIECLE) -->
         <div class="section145">
@@ -221,7 +139,7 @@
                         <div class="main-title-tt">
                             <div class="main-title-left">
                                 <span>For You</span>
-                                <h2 class="cosmetique-elite">Nos produits stars</h2>
+                                <h2 class="cosmetique-elite">produits stars</h2>
                             </div>
                             <a href="shop_grid.html" class="see-more-btn">See All</a>
                         </div>
@@ -439,13 +357,13 @@
             <div class="container">
                 <div class="row">
                     <!-- <div class="col-md-12">
-              <div class="main-title-tt">
-               <div class="main-title-left">
-                <span>Offers</span>
-                <h2 class="cosmetique-elite">COSMÉTIQUE</h2>
-               </div>
-              </div>
-             </div> -->
+                          <div class="main-title-tt">
+                           <div class="main-title-left">
+                            <span>Offers</span>
+                            <h2 class="cosmetique-elite">COSMÉTIQUE</h2>
+                           </div>
+                          </div>
+                         </div> -->
                     <div class="col-lg-4 col-md-6">
                         <a href="#" class="best-offer-item">
                             <!-- <img src="images/best-offers/offer-1.jpg" alt=""> -->
@@ -460,8 +378,8 @@
                         <a href="#" class="best-offer-item offr-none">
                             <!-- <img src="images/best-offers/offer-3.jpg" alt=""> -->
                             <!-- <div class="cmtk_dt">
-                <div class="product_countdown-timer offer-counter-text" data-countdown="2022/08/09"></div>
-               </div> -->
+                            <div class="product_countdown-timer offer-counter-text" data-countdown="2022/08/09"></div>
+                           </div> -->
                             <p>reserver pour presenter K.com</p>
                         </a>
                     </div>
@@ -484,7 +402,8 @@
                                 <span>For You</span>
                                 <h2 class="cosmetique-elite">ALIMENTATION</h2>
                             </div>
-                            <a href="{{ route('seeall', ['category' => 'alimentation']) }}" class="see-more-btn">See All</a>
+                            <a href="{{ route('seeall', ['category' => 'alimentation']) }}" class="see-more-btn">See
+                                All</a>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -538,7 +457,8 @@
                                 <span>For You</span>
                                 <h2 class="cosmetique-elite">COSMÉTIQUE</h2>
                             </div>
-                            <a href="{{ route('seeall', ['category' => 'cosmetique']) }}" class="see-more-btn">See All</a>
+                            <a href="{{ route('seeall', ['category' => 'cosmetique']) }}" class="see-more-btn">See
+                                All</a>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -594,7 +514,8 @@
                                 <span>For You</span>
                                 <h2 class="cosmetique-elite">PHARMACOPÉE</h2>
                             </div>
-                            <a href="{{ route('seeall', ['category' => 'pharmacopee']) }}" class="see-more-btn">See All</a>
+                            <a href="{{ route('seeall', ['category' => 'pharmacopee']) }}" class="see-more-btn">See
+                                All</a>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -638,228 +559,6 @@
         </div>
         <!-- New Products End -->
 
-
-        <!-- New Products End -->
-        <!-- New Products Start(PHARMACOPÉE) -->
-        <div class="section145">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="main-title-tt">
-                            <div class="main-title-left">
-                                <span>For You</span>
-                                <h2 class="cosmetique-elite">PHARMACOPÉE</h2>
-                            </div>
-                            <a href="shop_grid.html" class="see-more-btn">See All</a>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="owl-carousel featured-slider owl-theme">
-                            <div class="item">
-                                <div class="product-item">
-                                    <a href="single_product_view.html" class="product-img">
-                                        <!-- <img src="images/product/img-10.jpg" alt=""> -->
-                                        <div class="product-absolute-options">
-                                            <span class="offer-badge-1">New</span>
-                                            <span class="like-icon" title="wishlist"></span>
-                                        </div>
-                                    </a>
-                                    <div class="product-text-dt">
-                                        <p>Available<span>(In Stock)</span></p>
-                                        <h4>Product Title Here</h4>
-                                        <div class="product-price">$12 <span>$15</span></div>
-                                        <div class="qty-cart">
-                                            <div class="quantity buttons_added">
-                                                <input type="button" value="-" class="minus minus-btn">
-                                                <input type="number" step="1" name="quantity" value="1"
-                                                    class="input-text qty text">
-                                                <input type="button" value="+" class="plus plus-btn">
-                                            </div>
-                                            <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-item">
-                                    <a href="single_product_view.html" class="product-img">
-                                        <!-- <img src="images/product/img-9.jpg" alt=""> -->
-                                        <div class="product-absolute-options">
-                                            <span class="offer-badge-1">New</span>
-                                            <span class="like-icon" title="wishlist"></span>
-                                        </div>
-                                    </a>
-                                    <div class="product-text-dt">
-                                        <p>Available<span>(In Stock)</span></p>
-                                        <h4>Product Title Here</h4>
-                                        <div class="product-price">$10</div>
-                                        <div class="qty-cart">
-                                            <div class="quantity buttons_added">
-                                                <input type="button" value="-" class="minus minus-btn">
-                                                <input type="number" step="1" name="quantity" value="1"
-                                                    class="input-text qty text">
-                                                <input type="button" value="+" class="plus plus-btn">
-                                            </div>
-                                            <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-item">
-                                    <a href="single_product_view.html" class="product-img">
-                                        <!-- <img src="images/product/img-15.jpg" alt=""> -->
-                                        <div class="product-absolute-options">
-                                            <span class="offer-badge-1">New</span>
-                                            <span class="like-icon" title="wishlist"></span>
-                                        </div>
-                                    </a>
-                                    <div class="product-text-dt">
-                                        <p>Available<span>(In Stock)</span></p>
-                                        <h4>Product Title Here</h4>
-                                        <div class="product-price">$5</div>
-                                        <div class="qty-cart">
-                                            <div class="quantity buttons_added">
-                                                <input type="button" value="-" class="minus minus-btn">
-                                                <input type="number" step="1" name="quantity" value="1"
-                                                    class="input-text qty text">
-                                                <input type="button" value="+" class="plus plus-btn">
-                                            </div>
-                                            <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-item">
-                                    <a href="single_product_view.html" class="product-img">
-                                        <!-- <img src="images/product/img-11.jpg" alt=""> -->
-                                        <div class="product-absolute-options">
-                                            <span class="offer-badge-1">New</span>
-                                            <span class="like-icon" title="wishlist"></span>
-                                        </div>
-                                    </a>
-                                    <div class="product-text-dt">
-                                        <p>Available<span>(In Stock)</span></p>
-                                        <h4>Product Title Here</h4>
-                                        <div class="product-price">$15 <span>$16</span></div>
-                                        <div class="qty-cart">
-                                            <div class="quantity buttons_added">
-                                                <input type="button" value="-" class="minus minus-btn">
-                                                <input type="number" step="1" name="quantity" value="1"
-                                                    class="input-text qty text">
-                                                <input type="button" value="+" class="plus plus-btn">
-                                            </div>
-                                            <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-item">
-                                    <a href="single_product_view.html" class="product-img">
-                                        <!-- <img src="images/product/img-14.jpg" alt=""> -->
-                                        <div class="product-absolute-options">
-                                            <span class="offer-badge-1">New</span>
-                                            <span class="like-icon" title="wishlist"></span>
-                                        </div>
-                                    </a>
-                                    <div class="product-text-dt">
-                                        <p>Available<span>(In Stock)</span></p>
-                                        <h4>Product Title Here</h4>
-                                        <div class="product-price">$9</div>
-                                        <div class="qty-cart">
-                                            <div class="quantity buttons_added">
-                                                <input type="button" value="-" class="minus minus-btn">
-                                                <input type="number" step="1" name="quantity" value="1"
-                                                    class="input-text qty text">
-                                                <input type="button" value="+" class="plus plus-btn">
-                                            </div>
-                                            <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-item">
-                                    <a href="single_product_view.html" class="product-img">
-                                        <!-- <img src="images/product/img-2.jpg" alt=""> -->
-                                        <div class="product-absolute-options">
-                                            <span class="offer-badge-1">New</span>
-                                            <span class="like-icon" title="wishlist"></span>
-                                        </div>
-                                    </a>
-                                    <div class="product-text-dt">
-                                        <p>Available<span>(In Stock)</span></p>
-                                        <h4>Product Title Here</h4>
-                                        <div class="product-price">$7</div>
-                                        <div class="qty-cart">
-                                            <div class="quantity buttons_added">
-                                                <input type="button" value="-" class="minus minus-btn">
-                                                <input type="number" step="1" name="quantity" value="1"
-                                                    class="input-text qty text">
-                                                <input type="button" value="+" class="plus plus-btn">
-                                            </div>
-                                            <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-item">
-                                    <a href="single_product_view.html" class="product-img">
-                                        <!-- <img src="images/product/img-5.jpg" alt=""> -->
-                                        <div class="product-absolute-options">
-                                            <span class="offer-badge-1">New</span>
-                                            <span class="like-icon" title="wishlist"></span>
-                                        </div>
-                                    </a>
-                                    <div class="product-text-dt">
-                                        <p>Available<span>(In Stock)</span></p>
-                                        <h4>Product Title Here</h4>
-                                        <div class="product-price">$6.95</div>
-                                        <div class="qty-cart">
-                                            <div class="quantity buttons_added">
-                                                <input type="button" value="-" class="minus minus-btn">
-                                                <input type="number" step="1" name="quantity" value="1"
-                                                    class="input-text qty text">
-                                                <input type="button" value="+" class="plus plus-btn">
-                                            </div>
-                                            <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="product-item">
-                                    <a href="single_product_view.html" class="product-img">
-                                        <!-- <img src="images/product/img-6.jpg" alt=""> -->
-                                        <div class="product-absolute-options">
-                                            <span class="offer-badge-1">New</span>
-                                            <span class="like-icon" title="wishlist"></span>
-                                        </div>
-                                    </a>
-                                    <div class="product-text-dt">
-                                        <p>Available<span>(In Stock)</span></p>
-                                        <h4>Product Title Here</h4>
-                                        <div class="product-price">$8 <span>8.75</span></div>
-                                        <div class="qty-cart">
-                                            <div class="quantity buttons_added">
-                                                <input type="button" value="-" class="minus minus-btn">
-                                                <input type="number" step="1" name="quantity" value="1"
-                                                    class="input-text qty text">
-                                                <input type="button" value="+" class="plus plus-btn">
-                                            </div>
-                                            <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
     </div>
