@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [ProductController::class, 'welcome']);
+
+// Route publique pour voir les boutiques
+Route::get('/boutique/{id}', [BoutiqueController::class, 'show'])->name('boutique.show');
+Route::get('/seeall', [ProductController::class, 'seeAll'])->name('seeall');
+
+
+
 // Routes publiques (Connexion & Déconnexion)
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::delete('/logout', [AuthController::class, 'logout'])->name('auth.logout');
@@ -52,6 +59,4 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 });
 
 
-// Route publique pour voir les boutiques
-Route::get('/boutique/{id}', [BoutiqueController::class, 'show'])->name('boutique.show');
-Route::get('/seeall', [ProductController::class, 'seeAll'])->name('seeall');
+
