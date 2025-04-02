@@ -23,7 +23,7 @@
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <span class="dropdown-item dropdown-header">
                     @auth
-                        {{ Auth::user()->firstname }} {{ Auth::user()->lastname }}
+                        {{ Auth::user()->name }} {{ Auth::user()->prenom }}
                     @endauth
                     @guest
                         <a href="{{ route('auth.login') }}" class="dropdown-item">Se connecter</a>

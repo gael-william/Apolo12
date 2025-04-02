@@ -38,17 +38,19 @@
                         @endif
 
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title col-md-6 col-12">Liste des boutiques</h3>
-                                <div class="col-md-6 col-12 text-right">
-
-                                    <a type="button" href="{{ route('admin.boutiques.create') }}"
-                                        class="btn btn-primary btn-sm">Ajouter <i class="fa fa-plus"> </i></a>
-
-                                    {{-- <a type="button" href="{{ route('admin') }}" class="btn btn-danger btn-sm">Fermer <i
-                                            class="fa fa-arrow-left"></i></a> --}}
+                          
+                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                                <h4 class="mb-0">Liste des boutiques</h4>
+                                <div>
+                                    <a href="{{ route('admin.boutiques.create') }}" class="btn btn-success btn-sm">
+                                        <i class="fa fa-plus"></i> Ajouter
+                                    </a>
+                                    <a href="{{ route('admin.dashboard') }}" class="btn btn-danger btn-sm">
+                                        <i class="fa fa-times"></i> Fermer
+                                    </a>
                                 </div>
                             </div>
+            
                             <!-- /.card-header -->
 
                             <div class="card-body table-responsive">
@@ -87,7 +89,7 @@
                                                             <i class="fa fa-edit"></i>
                                                         </a>
                                                         <a href="{{ route('admin.boutiques.show', $boutique->id) }}"
-                                                            class="btn btn-primary btn-sm" title="Voir les détails">
+                                                            class="btn btn-success btn-sm" title="Voir les détails">
                                                             <i class="fa fa-eye"></i>
                                                         </a>
                                                         <form method="POST" style="display:inline"

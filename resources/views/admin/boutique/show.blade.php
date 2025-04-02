@@ -11,7 +11,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Admin</a></li>
-                            <li class="breadcrumb-item"><a href="{{ route('admin.boutique.index') }}">Liste des Boutiques</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.boutiques.index') }}">Liste des Boutiques</a></li>
                             <li class="breadcrumb-item active">Boutique: {{ $boutique->name }}</li>
                         </ol>
                     </div>
@@ -30,7 +30,7 @@
                                     <a href="{{ route('admin.boutiques.edit', $boutique->id) }}" class="btn btn-warning">
                                         Modifier <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="{{ route('admin.boutique.index') }}" class="btn btn-danger">
+                                    <a href="{{ route('admin.boutiques.index') }}" class="btn btn-danger">
                                         Fermer <i class="fa fa-window-close"></i>
                                     </a>
                                 </div>
@@ -81,9 +81,9 @@
                     <div class="icon">
                         <i class="fa fa-magic"></i>
                     </div>
-                    <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'cosmetique']) }}" class="small-box-footer">
+                    {{-- <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'cosmetique']) }}" class="small-box-footer">
                         Voir plus <i class="fas fa-arrow-circle-right"></i>
-                    </a>
+                    </a> --}}
                     
                 </div>
             </div>
@@ -96,9 +96,9 @@
                     <div class="icon">
                         <i class="fa fa-apple-alt"></i>
                     </div>
-                    <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'alimentation']) }}" class="small-box-footer">
+                    {{-- <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'alimentation']) }}" class="small-box-footer">
                         Voir plus <i class="fas fa-arrow-circle-right"></i>
-                    </a>
+                    </a> --}}
                     
                 </div>
             </div>
@@ -111,9 +111,9 @@
                     <div class="icon">
                         <i class="fa fa-prescription-bottle-alt"></i>
                     </div>
-                    <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'pharmacopee']) }}" class="small-box-footer">
+                    {{-- <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'pharmacopee']) }}" class="small-box-footer">
                         Voir plus <i class="fas fa-arrow-circle-right"></i>
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </div>

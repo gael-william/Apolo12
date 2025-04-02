@@ -14,15 +14,15 @@ return new class extends Migration
     Schema::create('users', function (Blueprint $table) {
         $table->id();
         $table->string('name');
-        $table->string('prenom'); // Ajouté ici
-        $table->string('cnib')->unique(); // Ajouté ici
-        $table->string('telephone')->unique(); // Ajouté ici
+        $table->string('prenom')->default(''); // Ajoutez cette ligne
+        $table->string('cnib')->unique()->default(''); // Ajoutez cette ligne
+        $table->string('telephone')->unique()->default(''); // Ajouté ici
         $table->enum('sexe', ['Homme', 'Femme']); // Ajouté ici
         $table->string('photo_profil')->nullable(); // Ajouté ici
         $table->unsignedBigInteger('boutique_id')->nullable(); // Ajouté ici
         $table->foreign('boutique_id')->references('id')->on('boutiques')->onDelete('set null'); // Ajouté ici
         $table->enum('role', ['super_admin', 'admin'])->default('admin'); // Ajouté ici
-        $table->string('email')->unique();
+        $table->string('email')->unique()->default('');
         $table->timestamp('email_verified_at')->nullable();
         $table->string('password');
         $table->rememberToken();

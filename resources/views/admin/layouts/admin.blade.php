@@ -35,7 +35,7 @@
 <style>
   /* Empêcher la sidebar de chevaucher le formulaire */
 body {
-    padding-left: 30px; /* Ajuste cette valeur en fonction de la largeur de ta sidebar */
+    padding-left: 15px; /* Ajuste cette valeur en fonction de la largeur de ta sidebar */
 }
 
 /* Centrer et espacer le formulaire */
