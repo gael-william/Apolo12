@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    
     public function showLoginForm()
     {
         return view('auth.login');
@@ -18,12 +19,12 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-
+    
         if (Auth::attempt($credentials, $request->has('remember'))) {
             $request->session()->regenerate();
-            return redirect()->route('admin.dashboard'); // Correction ici
+            return redirect()->route('admin.dashboard');
         }
-
+    
         return back()->withErrors([
             'email' => 'Identifiants incorrects.'
         ])->onlyInput('email');
@@ -34,6 +35,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('auth.login');
+        return redirect()->route('login'); // Correction ici
     }
+    
 }

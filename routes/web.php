@@ -8,28 +8,33 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
+// Page d'accueil
 Route::get('/', [ProductController::class, 'welcome']);
-// Routes publiques (Connexion & Déconnexion)
+
+// Routes d'authentification
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::delete('/logout', [AuthController::class, 'logout'])->name('auth.logout');
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login'); // Correction ici
 
+// Redirection après connexion
+// Route::middleware(['auth', 'verified'])->get('/dashboard', function () {
+//     return redirect()->route('admin.dashboard');
+// })->name('dashboard');
 
-// Tableau de routes pour l'admin (super admin et admin)
-Route::middleware(['auth'])->prefix('admin')->group(function () {
-
-    // Tableau de bord de l'admin
+// Routes Admin
+Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
-    // Gestion des utilisateurs (uniquement pour super admin)
-    Route::middleware('role:super_admin')->prefix('users')->name('admin.users.')->group(function () {
+    Route::prefix('users')->name('admin.users.')->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('index');
         Route::get('/create', [UserController::class, 'create'])->name('create');
         Route::post('/', [UserController::class, 'store'])->name('store');
+        Route::get('/{user}/edit', [UserController::class, 'edit'])->name('edit'); // Ajout route édition
+        Route::put('/{user}', [UserController::class, 'update'])->name('update'); // Ajout route mise à jour
         Route::delete('/{user}', [UserController::class, 'destroy'])->name('destroy');
     });
+    
 
-    // Gestion des boutiques
     Route::prefix('boutiques')->name('admin.boutiques.')->group(function () {
         Route::get('/', [BoutiqueController::class, 'index'])->name('index');
         Route::get('/create', [BoutiqueController::class, 'create'])->name('create');
@@ -40,18 +45,16 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
         Route::get('/{id}', [BoutiqueController::class, 'show_admin'])->name('show');
     });
 
-    // Gestion des produits
     Route::prefix('produits')->name('admin.produits.')->group(function () {
-        Route::get('boutiques/{boutique}/products', [ProductController::class, 'index'])->name('boutiques.products');
-        Route::get('boutiques/{boutique}/products/create', [ProductController::class, 'create'])->name('boutiques.products.create');
-        Route::post('boutiques/{boutique}/products', [ProductController::class, 'store'])->name('boutiques.products.store');
-        Route::get('boutiques/{boutique}/products/{product}/edit', [ProductController::class, 'edit'])->name('boutiques.products.edit');
-        Route::put('boutiques/{boutique}/products/{product}', [ProductController::class, 'update'])->name('boutiques.products.update');
-        Route::delete('boutiques/{boutique}/products/{product}', [ProductController::class, 'destroy'])->name('boutiques.products.destroy');
+        Route::get('/', [ProductController::class, 'index'])->name('index');
+        Route::get('/create', [ProductController::class, 'create'])->name('create');
+        Route::post('/', [ProductController::class, 'store'])->name('store');
+        Route::get('/{id}/edit', [ProductController::class, 'edit'])->name('edit');
+        Route::put('/{id}', [ProductController::class, 'update'])->name('update');
+        Route::delete('/{id}', [ProductController::class, 'destroy'])->name('destroy');
     });
 });
 
-
-// Route publique pour voir les boutiques
+// Routes publiques pour voir les boutiques
 Route::get('/boutique/{id}', [BoutiqueController::class, 'show'])->name('boutique.show');
 Route::get('/seeall', [ProductController::class, 'seeAll'])->name('seeall');
