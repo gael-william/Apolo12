@@ -3,12 +3,12 @@
     <!-- Body Start -->
     <div class="wrapper">
 
-        <div class="search-container">
+        <!-- <div class="search-container">
             <div class="header_search position-relative">
                 <input class="prompt srch10" type="text" placeholder="Rechercher des produits...">
                 <i class="uil uil-search s-icon"></i>
             </div>
-        </div>
+        </div> -->
 
 
 
@@ -141,7 +141,7 @@
                                 <span>For You</span>
                                 <h2 class="cosmetique-elite">produits stars</h2>
                             </div>
-                            <a href="shop_grid.html" class="see-more-btn">See All</a>
+                            <!-- <a href="shop_grid.html" class="see-more-btn">See All</a> -->
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -373,26 +373,26 @@
                          </div> -->
                     <div class="col-lg-4 col-md-6">
                         <a href="#" class="best-offer-item">
-                            <img src="images/best-offers/offer-1.jpg" alt="">
+                            <img src="images/best-offers/img1.jpg" alt="">
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <a href="#" class="best-offer-item">
-                            <img src="images/best-offers/offer-2.jpg" alt="">
+                            <img src="images/best-offers/img2.jpg" alt="">
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <a href="#" class="best-offer-item offr-none">
-                            <img src="images/best-offers/offer-3.jpg" alt="">
+                            <img src="images/best-offers/img3.jpg" alt="">
                             <!-- <div class="cmtk_dt">
                             <div class="product_countdown-timer offer-counter-text" data-countdown="2022/08/09"></div>
                            </div> -->
-                            <p>reserver pour presenter K.com</p>
+                            <p></p>
                         </a>
                     </div>
                     <div class="col-md-12">
                         <a href="#" class="code-offer-item">
-                            <img src="images/best-offers/offer-4.jpg" alt="">
+                            <img src="images/best-offers/img4.jpg" alt="">
                         </a>
                     </div>
                 </div>
@@ -570,7 +570,7 @@
                                             
                                             <h4>{{ $produit->name }}</h4>
                                             <div class="product-price">{{ $produit->price }} F CFA</div>
-                                            <button class="btn btn-primary open-modal" data-id="{{ $produit->id }}"
+                                            <button class="btn btn-success open-modal" data-id="{{ $produit->id }}"
                                                 data-name="{{ $produit->name }}" data-price="{{ $produit->price }}"
                                                 data-description="{{ $produit->description }}"
                                                 data-image="{{ asset('storage/' . $produit->image_url) }}">

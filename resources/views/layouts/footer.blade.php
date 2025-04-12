@@ -5,8 +5,9 @@
         <div class="footer-top">
             <!-- Logo et description -->
             <div class="footer-logo">
-                <img src="images/logo-kitiga.png" alt="Logo Kitiga" style="height: 60px;">
-                <p>Venez découvrir ce que vous n'avez jamais vu</p>
+                <img src="images/logo2.png" alt="Logo Kitiga" style="height: 60px;">
+                <p class="footer-slogan">Venez découvrir ce que vous n'avez jamais vu !</p>
+
             </div>
 
             <!-- Liens vers les réseaux sociaux -->

@@ -76,7 +76,7 @@
     <div class="top-header-group">
         <div class="top-header">
             <div class="main_logo" id="logo">
-                <a href="index.html"><img src="{{ asset('images/logo.svg') }}" alt=""></a>
+                <a href="index.html"><img src="{{ asset('images/logo2.png') }}" alt=""></a>
                 <a href="index.html"><img class="logo-inverse" src="images/dark-logo.svg" alt=""></a>
             </div>
             <div class="search120">
@@ -88,25 +88,25 @@
             <div class="header_right">
                 <ul>
                     <li>
-                        <a href="#" class="offer-link"><i class="uil uil-phone-alt"></i>1800-000-000</a>
+                        <a href="#" class="offer-link"><i class="uil uil-phone-alt"></i>+226 06-59-89-19/02-10-10-08</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="offers.html" class="offer-link"><i class="uil uil-gift"></i>Offers</a>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Help</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="dashboard_my_wishlist.html" class="option_links" title="Wishlist"><i
                                 class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a>
                     </li>
                     <li class="dropdown account-dropdown">
-                        <a href="#" class="opts_account" role="button" id="accountClick"
+                        <!-- <a href="#" class="opts_account" role="button" id="accountClick"
                             data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="images/avatar/img-5.jpg" alt="">
                             <span class="user__name">John Doe</span>
                             <i class="uil uil-angle-down"></i>
-                        </a>
+                        </a> -->
                         <div class="dropdown-menu dropdown-menu-account dropdown-menu-end"
                             aria-labelledby="accountClick" data-bs-popper="none">
                             <div class="night_mode_switch__btn">
@@ -147,9 +147,9 @@
                         <i class="uil uil-bars"></i>
                     </span>
                 </button>
-                <a href="#" class="category_drop hover-btn" data-bs-toggle="modal"
+                <!-- <a href="#" class="category_drop hover-btn" data-bs-toggle="modal"
                     data-bs-target="#category_model" title="Categories"><i class="uil uil-apps"></i><span
-                        class="cate__icon">Select Category</span></a>
+                        class="cate__icon">Select Category</span></a> -->
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">

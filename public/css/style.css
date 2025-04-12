@@ -2423,7 +2423,7 @@ span.like-icon {
 
 /* *******************   featured slider************************* */
 
-.featured-slider .owl-nav .owl-next {
+.featured-slider .owl-nav .owl-next, {
 	font-size: 20px !important;
 	position: absolute;
 	right: -20px;
@@ -2503,6 +2503,25 @@ span.like-icon {
     max-width: 1200px;
     margin: auto;
 }
+
+.footer-slogan {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #f1f1f1;
+    margin-top: 10px;
+    max-width: 350px;
+    text-align: center;
+    line-height: 1.5;
+    opacity: 0.9;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer-slogan:hover {
+    color: #E67E22;
+    transform: scale(1.05);
+}
+
 
 .footer-top {
     display: flex;
@@ -7002,31 +7021,7 @@ Par défaut, cacher la barre de recherche
     display: none;
 }
 
-@media screen and (max-width: 1024px) {
-    .search-container {
-        display: flex !important;
-        justify-content: flex-start; /* Plaquer à gauche */
-        width: 70%; /* Réduire la largeur */
-        max-width: 400px; /* Taille max */
-        margin-left: 10px; /* Un petit espace avec le bord */
-    }
 
-    .search-container input {
-        width: 100%;
-        padding: 8px 12px;
-        border: 2px solid #ccc; /* Bordure légère */
-        border-radius: 20px; /* Bordures arrondies */
-        outline: none;
-    }
-
-    .search-container i {
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #666;
-    }
-}
 
 
 
