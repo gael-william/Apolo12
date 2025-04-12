@@ -187,6 +187,13 @@
                 </div>
             </div>
         </div>
+
+
+        <a href="https://wa.me/1234567890" class="whatsapp-fixed" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
+        </a>
+
+
         <!-- Featured Products End -->
 
         <!-- Best Values Offers Start -->
@@ -203,17 +210,17 @@
                              </div> -->
                     <div class="col-lg-4 col-md-6">
                         <a href="#" class="best-offer-item">
-                            <!-- <img src="images/best-offers/offer-1.jpg" alt=""> -->
+                            <img src="images/best-offers/offer-1.jpg" alt="">
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <a href="#" class="best-offer-item">
-                            <!-- <img src="images/best-offers/offer-2.jpg" alt=""> -->
+                            <img src="images/best-offers/offer-2.jpg" alt="">
                         </a>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <a href="#" class="best-offer-item offr-none">
-                            <!-- <img src="images/best-offers/offer-3.jpg" alt=""> -->
+                            <img src="images/best-offers/offer-3.jpg" alt="">
                             <!-- <div class="cmtk_dt">
                                 <div class="product_countdown-timer offer-counter-text" data-countdown="2022/08/09"></div>
                                </div> -->
@@ -222,7 +229,7 @@
                     </div>
                     <div class="col-md-12">
                         <a href="#" class="code-offer-item">
-                            <!-- <img src="images/best-offers/offer-4.jpg" alt=""> -->
+                            <img src="images/best-offers/offer-4.jpg" alt="">
                         </a>
                     </div>
                 </div>

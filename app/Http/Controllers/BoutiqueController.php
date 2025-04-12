@@ -45,6 +45,7 @@ class BoutiqueController extends Controller
         } else {
             return back()->withErrors(['cropped_image' => 'Veuillez recadrer l\'image avant de soumettre.']);
         }
+        
     
         // Création de la boutique
         Boutique::create([
@@ -57,6 +58,7 @@ class BoutiqueController extends Controller
             'business_type' => $request->business_type,
             'image' => $imagePath
         ]);
+
     
         return redirect()->route('admin.boutiques.index')->with('success', 'Boutique ajoutée avec succès');
     }
