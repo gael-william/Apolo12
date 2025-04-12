@@ -15,7 +15,7 @@ class AdminController extends Controller
     {
         $stats = [
             'products' => Product::count(),
-            // 'orders' => Commande::count(),
+            'orders' => Commande::count(),
             'shops' => Boutique::count(),
             'users' => User::count(),
             // 'ads' => Publicite::count(),

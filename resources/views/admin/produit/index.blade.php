@@ -10,7 +10,7 @@
                         <div class="card-header d-flex justify-content-between align-items-center">
                             <h3 class="card-title">Produits de la boutique</h3>
                             <div>
-                                <a href="{{ route('admin.boutiques.products.create', $boutique->id) }}" class="btn btn-primary btn-sm">
+                                <a href="{{ route('admin.boutiques.products.create', $boutique->id) }}" class="btn btn-info btn-sm">
                                     Ajouter un produit <i class="fa fa-plus"></i>
                                 </a>
                                 <a href="{{ route('admin.boutiques.show', $boutique->id) }}" class="btn btn-danger btn-sm">Fermer</a>
@@ -31,7 +31,7 @@
                                                     <h5 class="text-primary font-weight-bold">{{ number_format($product->price, 0, ',', ' ') }} F</h5>
                                                     <div class="d-flex justify-content-center">
                                                         <td>
-                                                            <a href="{{ route('admin.boutiques.products.edit', [$boutique->id, $product->id]) }}" class="btn btn-sm btn-primary d-inline">Modifier</a>
+                                                            <a href="{{ route('admin.boutiques.products.edit', [$boutique->id, $product->id]) }}" class="btn btn-sm btn-info d-inline">Modifier</a>
                                                             <form action="{{ route('admin.boutiques.products.destroy', [$boutique->id, $product->id]) }}" method="POST" class="d-inline">
                                                                 @csrf
                                                                 @method('DELETE')

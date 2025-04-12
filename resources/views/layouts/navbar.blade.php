@@ -48,6 +48,8 @@
 
 <!-- Cart Sidebar Offcanvas Start-->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <input type="hidden" id="boutique_id" value="{{ $boutique->id }}">
+
     <div class="offcanvas-header bs-canvas-header side-cart-header p-3">
         <div class="d-inline-block main-cart-title" id="offcanvasRightLabel">
             My Cart <span id="cart-count">(0 Items)</span>
@@ -64,8 +66,12 @@
             <h2>Total</h2>
             <span>0 FCFA</span>
         </div>
-        <div class="checkout-cart">
-            <a href="checkout.html" class="cart-checkout-btn hover-btn">Proceed to Checkout</a>
+        <div class="mb-2 px-3">
+            <input type="text" id="userPhone" class="form-control" placeholder="Votre numéro de téléphone">
+        </div>
+        
+        <div class="checkout-cart px-3">
+            <button id="checkout-btn" class="cart-checkout-btn hover-btn w-100">Commander</button>
         </div>
     </div>
     

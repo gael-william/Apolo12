@@ -89,7 +89,7 @@
                                                             <i class="fa fa-edit"></i>
                                                         </a>
                                                         <a href="{{ route('admin.boutiques.show', $boutique->id) }}"
-                                                            class="btn btn-success btn-sm" title="Voir les détails">
+                                                            class="btn btn-info" title="Voir les détails">
                                                             <i class="fa fa-eye"></i>
                                                         </a>
                                                         <form method="POST" style="display:inline"

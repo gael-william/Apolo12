@@ -15,4 +15,10 @@ class Product extends Model
     {
         return $this->belongsTo(Boutique::class, 'boutique_id');
     }
+
+    public function commandes()
+{
+    return $this->hasMany(Commande::class);
+}
+
 }

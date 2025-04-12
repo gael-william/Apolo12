@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Boutique;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -153,8 +154,14 @@ public function destroy($boutiqueId, $productId)
         $produitsCosmetique = Product::where('category', 'Cosmétique')->latest()->take(8)->get();
         $produitsPharmacopee = Product::where('category', 'Pharmacopée')->latest()->take(8)->get();
         $boutiques = Boutique::all(); // Récupère toutes les boutiques
-    
-        return view('welcome', compact('produitsAlimentation', 'produitsCosmetique', 'produitsPharmacopee', 'boutiques'));
+
+        // Récupérer les 8 menus les plus commandés
+       $menusLesPlusCommandes = Product::select('products.*', DB::raw('(SELECT COUNT(*) FROM commandes WHERE products.id = commandes.produit) as commandes_count'))
+           ->orderBy('commandes_count', 'desc')
+           ->limit(8)
+           ->get();
+
+        return view('welcome', compact('produitsAlimentation', 'produitsCosmetique', 'produitsPharmacopee', 'boutiques', 'menusLesPlusCommandes'));
     }
     
 
