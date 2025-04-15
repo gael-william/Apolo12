@@ -65,7 +65,7 @@
                                         <p>Available<span>(In Stock)</span></p>
                                         <h4>{{ $produit->name }}</h4>
                                         <div class="product-price">{{ $produit->price }} F CFA</div>
-                                        <button class="btn btn-primary open-modal" data-id="{{ $produit->id }}"
+                                        <button class="btn btn-success open-modal" data-id="{{ $produit->id }}"
                                             data-name="{{ $produit->name }}" data-price="{{ $produit->price }}"
                                             data-description="{{ $produit->description }}"
                                             data-image="{{ asset('storage/' . $produit->image_url) }}">

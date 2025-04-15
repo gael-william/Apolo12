@@ -60,7 +60,7 @@ class BoutiqueController extends Controller
         ]);
 
     
-        return redirect()->route('admin.boutique.index')->with('success', 'Boutique ajoutée avec succès');
+        return redirect()->route('admin.boutiques.index')->with('success', 'Boutique ajoutée avec succès');
     }
     
 
@@ -117,7 +117,7 @@ public function update(Request $request, $id)
         'image' => $imagePath
     ]);
 
-    return redirect()->route('admin.boutique.index')->with('success', 'Boutique mise à jour avec succès');
+    return redirect()->route('admin.boutiques.index')->with('success', 'Boutique mise à jour avec succès');
 }
 
 public function destroy($id)
@@ -132,7 +132,7 @@ public function destroy($id)
     // Supprimer la boutique
     $boutique->delete();
 
-    return redirect()->route('admin.boutique.index')->with('success', 'Boutique supprimée avec succès');
+    return redirect()->route('admin.boutiques.index')->with('success', 'Boutique supprimée avec succès');
 }
 
 
@@ -150,5 +150,6 @@ public function show($id)
     
     return view('showboutique', compact('boutique', 'produits'));
 }
+
 
 }

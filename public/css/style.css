@@ -2060,7 +2060,7 @@ i.icon1 {
 .offer-top-text-banner p {
     font-size: 12px;
     font-weight: 600;
-    color: #00561b;
+    color: #f55d2c;
     margin-bottom: 3px;
     text-align: left;
     text-transform: uppercase;
@@ -2089,13 +2089,14 @@ i.icon1 {
     right: 20px;
     display: inline-block;
     padding: 10px 30px;
-    background: #00561b;
+    background: #f55d2c;
     text-align: center;
     color: #fff;
     border-radius: 5px;
     font-size: 14px;
     font-weight: 500;
 }
+
 
 /* --- Slider Category --- */
 
@@ -2140,7 +2141,7 @@ i.icon1 {
     color: white;
     border-radius: 50px; /* Coins arrondis pour un look futuriste */
     padding: 1px 10px; /* Petite taille mais encore lisible et cliquable */
-    font-size: 10.5px; /* Taille réduite mais assez grande pour être lue */
+    font-size: 15px; /* Taille réduite mais assez grande pour être lue */
     font-weight: 600; /* Poids de police léger mais lisible */
     text-align: center;
     border: 2px solid #28a745; /* Bordure assortie */

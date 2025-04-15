@@ -33,6 +33,9 @@
                                     <a href="{{ route('admin.boutiques.index') }}" class="btn btn-danger">
                                         Fermer <i class="fa fa-window-close"></i>
                                     </a>
+                                    <a href="{{ route('admin.commandes.show', ['boutique_id' => $boutique->id]) }}" class="btn btn-info">Voir commandes</a>
+
+                                    
                                 </div>
                             </div>
 
@@ -81,9 +84,9 @@
                     <div class="icon">
                         <i class="fa fa-magic"></i>
                     </div>
-                    {{-- <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'cosmetique']) }}" class="small-box-footer">
+                    <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'cosmetique']) }}" class="small-box-footer">
                         Voir plus <i class="fas fa-arrow-circle-right"></i>
-                    </a> --}}
+                    </a>
                     
                 </div>
             </div>
@@ -96,9 +99,9 @@
                     <div class="icon">
                         <i class="fa fa-apple-alt"></i>
                     </div>
-                    {{-- <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'alimentation']) }}" class="small-box-footer">
+                    <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'alimentation']) }}" class="small-box-footer">
                         Voir plus <i class="fas fa-arrow-circle-right"></i>
-                    </a> --}}
+                    </a>
                     
                 </div>
             </div>
@@ -111,9 +114,9 @@
                     <div class="icon">
                         <i class="fa fa-prescription-bottle-alt"></i>
                     </div>
-                    {{-- <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'pharmacopee']) }}" class="small-box-footer">
+                    <a href="{{ route('admin.boutiques.products', ['boutique' => $boutique->id, 'category' => 'pharmacopee']) }}" class="small-box-footer">
                         Voir plus <i class="fas fa-arrow-circle-right"></i>
-                    </a> --}}
+                    </a>
                 </div>
             </div>
         </div>

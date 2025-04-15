@@ -158,6 +158,9 @@ $(document).ready(function(){
         nav: true,
 		navText: ["<i class='uil uil-angle-left'></i>", "<i class='uil uil-angle-right'></i>"],
 		dots:false,
+		autoplay:true,
+		autoplayTimeout: 3000,
+		autoplayHoverPause:true,
         responsive: {
             0: {  // Petits écrans (mobile)
                 items: 2, 

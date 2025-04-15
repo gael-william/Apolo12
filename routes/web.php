@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BoutiqueController;
+use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +44,8 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
         Route::put('/{id}', [BoutiqueController::class, 'update'])->name('update');
         Route::delete('/{id}', [BoutiqueController::class, 'destroy'])->name('destroy');
         Route::get('/{id}', [BoutiqueController::class, 'show_admin'])->name('show');
+        Route::get('/admin/boutiques/{boutique}/produits/{category}', [BoutiqueController::class, 'productsByCategory'])->name('products');
+
     });
 
     Route::prefix('produits')->name('admin.produits.')->group(function () {
@@ -53,8 +56,37 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
         Route::put('/{id}', [ProductController::class, 'update'])->name('update');
         Route::delete('/{id}', [ProductController::class, 'destroy'])->name('destroy');
     });
+    // Afficher les produits d'une boutique
+Route::get('admin/boutiques/{boutique}/produits', [ProductController::class, 'index'])->name('admin.boutiques.products');
+
+// Ajouter un produit à une boutique
+Route::get('admin/boutiques/{boutique}/produits/create', [ProductController::class, 'create'])->name('admin.boutiques.products.create');
+
+// Enregistrer un produit
+Route::post('admin/boutiques/{boutique}/produits', [ProductController::class, 'store'])->name('admin.boutiques.products.store');
+
+// Modifier un produit
+Route::get('admin/boutiques/{boutique}/produits/{product}/edit', [ProductController::class, 'edit'])->name('admin.boutiques.products.edit');
+
+// Mettre à jour un produit
+Route::put('admin/boutiques/{boutique}/produits/{product}', [ProductController::class, 'update'])->name('admin.boutiques.products.update');
+
+// Supprimer un produit
+Route::delete('admin/boutiques/{boutique}/produits/{product}', [ProductController::class, 'destroy'])->name('admin.boutiques.products.destroy');
+
 });
 
 // Routes publiques pour voir les boutiques
 Route::get('/boutique/{id}', [BoutiqueController::class, 'show'])->name('boutique.show');
 Route::get('/seeall', [ProductController::class, 'seeAll'])->name('seeall');
+
+
+
+
+// routes/web.php
+Route::post('/commandes', [CommandeController::class, 'store'])->name('commandes.store');
+Route::get('/commandes/pdf/{id}', [CommandeController::class, 'generatePdf'])->name('commandes.pdf');
+Route::patch('/admin/commandes/{id}/etat', [CommandeController::class, 'updateEtat'])->name('admin.commandes.updateEtat');
+Route::get('/admin/commandes/show', [CommandeController::class, 'show'])->name('admin.commandes.show');
+Route::get('/admin/commandes/boutique/{id}', [CommandeController::class, 'ShowBoutique'])->name('commandes.showboutique');
+Route::get('/commande/voir/{id}', [CommandeController::class, 'afficherCommande'])->name('commande.voir');

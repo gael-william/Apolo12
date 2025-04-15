@@ -5,7 +5,7 @@
         <div class="footer-top">
             <!-- Logo et description -->
             <div class="footer-logo">
-                <img src="images/logo2.png" alt="Logo Kitiga" style="height: 60px;">
+                <img src="{{ asset('images/logo2.png') }}" alt="Logo Kitiga" style="height: 60px;">
                 <p class="footer-slogan">Venez découvrir ce que vous n'avez jamais vu !</p>
 
             </div>

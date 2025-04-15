@@ -48,6 +48,8 @@
 
 <!-- Cart Sidebar Offcanvas Start-->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <input type="hidden" id="boutique_id" value="{{ $boutique->id }}">
+
     <div class="offcanvas-header bs-canvas-header side-cart-header p-3">
         <div class="d-inline-block main-cart-title" id="offcanvasRightLabel">
             My Cart <span id="cart-count">(0 Items)</span>
@@ -64,8 +66,12 @@
             <h2>Total</h2>
             <span>0 FCFA</span>
         </div>
-        <div class="checkout-cart">
-            <a href="checkout.html" class="cart-checkout-btn hover-btn">Proceed to Checkout</a>
+        <div class="mb-2 px-3">
+            <input type="text" id="userPhone" class="form-control" placeholder="Votre numéro de téléphone">
+        </div>
+        
+        <div class="checkout-cart px-3">
+            <button id="checkout-btn" class="cart-checkout-btn hover-btn w-100">Commander</button>
         </div>
     </div>
     
@@ -87,9 +93,13 @@
             </div>
             <div class="header_right">
                 <ul>
-                    <li>
-                        <a href="#" class="offer-link"><i class="uil uil-phone-alt"></i>+226 06-59-89-19/02-10-10-08</a>
-                    </li>
+                <li style="list-style: none;">
+                <a href="tel:+22606598919" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1a1a1a; font-family: 'Segoe UI', sans-serif; font-weight: 500; font-size: 16px;">
+                    <i class="fas fa-phone" style="font-size: 20px; color: #007bff;"></i>
+                    Service clientèle : +226 06598919 / 02101008
+                </a>
+                </li>
+
                     <!-- <li>
                         <a href="offers.html" class="offer-link"><i class="uil uil-gift"></i>Offers</a>
                     </li> -->
@@ -227,7 +237,7 @@
                         <div class="d-block d-lg-none">
                             <ul class="offcanvas-help-links">
                                 <li><a href="#" class="offer-link"><i
-                                            class="uil uil-phone-alt"></i>1800-000-000</a></li>
+                                            class="uil uil-phone-alt"></i>+226 06-59-89-19/ 02-10-10-08</a></li>
                                 <li><a href="offers.html" class="offer-link"><i class="uil uil-gift"></i>Offers</a>
                                 </li>
                                 <li><a href="faq.html" class="offer-link"><i
