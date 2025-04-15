@@ -48,7 +48,7 @@
 
 <!-- Cart Sidebar Offcanvas Start-->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <input type="hidden" id="boutique_id" value="{{ $boutique->id }}">
+    {{-- <input type="hidden" id="boutique_id" value="{{ $boutique->id }}"> --}}
 
     <div class="offcanvas-header bs-canvas-header side-cart-header p-3">
         <div class="d-inline-block main-cart-title" id="offcanvasRightLabel">

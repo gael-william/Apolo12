@@ -2,8 +2,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-        <img src="{{ asset('images/wedga-logo.png') }}" alt="Wegad" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">Wedga 0.0.2</span>
+        <img src="{{ asset('images/wedga-logo.png') }}" alt="K.com" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">K.com</span>
     </a>
   
     <!-- Sidebar -->

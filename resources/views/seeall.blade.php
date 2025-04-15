@@ -8,26 +8,26 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
-						<nav aria-label="breadcrumb">
+						{{-- <nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
 								<li class="breadcrumb-item active" aria-current="page">Vegetables & Fruits</li>
 							</ol>
-						</nav>
+						</nav> --}}
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="all-product-grid">
 			<div class="container">
-				<div class="row">
+				{{-- <div class="row">
 					<div class="col-lg-12">
 						<div class="product-top-dt">
 							<div class="product-left-title">
 								<a href="#" class="category_drop hover-btn" data-bs-toggle="modal"
 								data-bs-target="#category_model" title="Categories"><i class="uil uil-apps"></i><span
 									class="cate__icon">Selectionner la Catégories</span></a>							</div>
-							{{-- <a href="#" class="filter-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilter" aria-controls="offcanvasFilter">Filters</a> --}}
+							<a href="#" class="filter-btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilter" aria-controls="offcanvasFilter">Filters</a>
 							
 							<div class="product-sort main-form">
 								<select class="selectpicker" data-width="25%">
@@ -42,7 +42,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 				<div class="product-list-view">
 					<div class="row">
 						@foreach ($produits as $produit)

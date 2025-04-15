@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Wedga</title>
+    <title>K.com</title>
 
 
 
@@ -81,7 +81,7 @@ body {
 
       <!-- Preloader -->
       <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{asset('images/wedga-logo.png')}}" alt="WEDGA" height="60" width="60">
+        <img class="animation__shake" src="{{asset('images/wedga-logo.png')}}" alt="K.com" height="60" width="60">
       </div>
 
       @include('admin.layouts.navbar')
@@ -93,13 +93,13 @@ body {
 
 
       <!-- /.content-wrapper -->
-      <footer class="main-footer">
+      {{-- <footer class="main-footer">
         <strong>Copyright &copy; 2023-2024 <a href="https://uwazy.com">UWAZY SARL</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
           <b>Version</b> 0.0.2
         </div>
-      </footer>
+      </footer> --}}
 
       <!-- Control Sidebar -->
       <aside class="control-sidebar control-sidebar-dark">
