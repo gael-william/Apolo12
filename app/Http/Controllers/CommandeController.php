@@ -65,13 +65,14 @@ class CommandeController extends Controller
         }
     
         // ✅ Si la boutique est spécifiée (ex: dans l'URL avec ?boutique_id=2)
+        $boutique = null;
         if ($request->filled('boutique_id')) {
-            $query->where('boutique_id', $request->boutique_id);
+            $boutique = Boutique::findOrFail($request->boutique_id);
         }
     
         $commandes = $query->get();
     
-        return view('admin.commandes.show', compact('commandes'));
+        return view('admin.commandes.show', compact('commandes', 'boutique'));
     }
     
 

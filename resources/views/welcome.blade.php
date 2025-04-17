@@ -6,7 +6,9 @@
 
 
         <!-- Offers Start -->
-        <div class="main-banner-slider">
+        <!-- <div class="main-banner-slider">
+			
+		
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
@@ -95,7 +97,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
         <!-- Offers End -->
         <!-- Categories Start -->
         <div class="section145">
@@ -183,7 +185,7 @@
 
         <a href="https://wa.me/+22602101008" class="whatsapp-fixed" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
-        </a>
+        </a> --}}
 
 
         <!-- Featured Products End -->
@@ -445,7 +447,7 @@
                             </div>
                             <div class="col-lg-8">
                                 <h2 id="modalProductName"></h2>
-                                <p id="modalProductDescription"></p>
+                                <p id="modalProductDescription" style="overflow-y: auto; max-height: 300px;"></p>
                                 <p><strong>Prix :</strong> <span id="modalProductPrice"></span> F CFA</p>
                             </div>
                         </div>

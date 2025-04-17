@@ -5,6 +5,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header ">
+                        <input type="hidden" id="boutique_id" value="{{ $boutique->id }}">
+
                         <h1 class="fw-bold text-danger">{{ $boutique->name }}</h1>
                     </div>
 
@@ -89,28 +91,29 @@
             </div>
         </div>
 
-        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="productModalLabel">Détails du produit</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <img id="modalProductImage" src="" class="img-fluid">
-                            </div>
-                            <div class="col-lg-8">
-                                <h2 id="modalProductName"></h2>
-                                <p id="modalProductDescription"></p>
-                                <p><strong>Prix :</strong> <span id="modalProductPrice"></span> F CFA</p>
-                            </div>
+        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Détails du produit</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img id="modalProductImage" src="" class="img-fluid">
+                        </div>
+                        <div class="col-lg-8">
+                            <h2 id="modalProductName"></h2>
+                            <p id="modalProductDescription" style="overflow-y: auto; max-height: 300px;"></p>
+                            <p><strong>Prix :</strong> <span id="modalProductPrice"></span> F CFA</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
     </div>
 @endsection

@@ -1059,7 +1059,7 @@ i.icon1 {
 }
 
 .offcanvas-logo img {
-    width: 50px;
+    width: 100px;
 }
 
 .category_drop_canvas {
@@ -2061,6 +2061,7 @@ i.icon1 {
     font-size: 12px;
     font-weight: 600;
     color: #f55d2c;
+    color: #f55d2c;
     margin-bottom: 3px;
     text-align: left;
     text-transform: uppercase;
@@ -2089,6 +2090,7 @@ i.icon1 {
     right: 20px;
     display: inline-block;
     padding: 10px 30px;
+    background: #f55d2c;
     background: #f55d2c;
     text-align: center;
     color: #fff;

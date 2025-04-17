@@ -23,6 +23,8 @@
                             </div>
                         </div>
                     </form>
+                    <a href="{{ route('admin.boutiques.show', $boutique->id) }}" class="btn btn-danger btn-sm">Fermer</a>
+
 
                     <!-- Liste des commandes -->
                     <h2 class="card-header text-center">Liste des Commandes</h2>

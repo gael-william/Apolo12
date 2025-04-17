@@ -48,7 +48,7 @@
 
 <!-- Cart Sidebar Offcanvas Start-->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <input type="hidden" id="boutique_id" value="{{ $boutique->id }}">
+    {{-- <input type="hidden" id="boutique_id" value="{{ $boutique->id }}"> --}}
 
     <div class="offcanvas-header bs-canvas-header side-cart-header p-3">
         <div class="d-inline-block main-cart-title" id="offcanvasRightLabel">
@@ -164,7 +164,7 @@
                     aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
                         <div class="offcanvas-logo" id="offcanvasNavbarLabel">
-                            <img src="images/dark-logo-1.svg" alt="">
+                            <img src="images/logo2.png" alt="">
                         </div>
                         <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
                             <i class="uil uil-multiply"></i>
@@ -236,15 +236,15 @@
                         </ul>
                         <div class="d-block d-lg-none">
                             <ul class="offcanvas-help-links">
-                                <li><a href="#" class="offer-link"><i
-                                            class="uil uil-phone-alt"></i>+226 06-59-89-19/ 02-10-10-08</a></li>
+                                <li><a href="#" class="offer-link"><i class="fas fa-phone" style="font-size: 20px; color: #007bff;"></i>+226 06-59-89-19/ 02-10-10-08</a>
+                              </li>
                                 <li><a href="offers.html" class="offer-link"><i class="uil uil-gift"></i>Offers</a>
                                 </li>
                                 <li><a href="faq.html" class="offer-link"><i
                                             class="uil uil-question-circle"></i>Help</a></li>
                             </ul>
                             <div class="offcanvas-copyright">
-                                <i class="uil uil-copyright"></i>Copyright 2022 <b>Gambolthemes</b> . All rights
+                                <i class="uil uil-copyright"></i>Copyright 2024 <b>Kitiga</b> . All rights
                                 reserved
                             </div>
                         </div>
