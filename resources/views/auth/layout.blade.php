@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Wedga | Connexion</title>
+    <title>Kitiga | Connexion</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -30,19 +30,19 @@
 @endguest
     <div class="login-box">
         <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
+        <div class="card card-outline card-success">
             <div class="card-header text-center">
-                <a href="#" class="h1"><b>Admin </b>WEDGA</a>
+                <a href="#" class="h2"><b>Admin </b> <br><img style="width: 80px" src="images/logo2.png" alt=""></a>
             </div>
             <div class="card-body">
 
-                <p class="login-box-msg">Sign in to start your session</p>
+                <p class="login-box-msg">Connectez-vous à votre boutique</p>
 
                 @yield('content')
 
 
                 <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
+                    <a href="forgot-password.html">mot de passe oublié</a>
                 </p>
 
             </div>

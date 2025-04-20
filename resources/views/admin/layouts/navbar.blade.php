@@ -36,9 +36,13 @@
                         <i class="fas fa-user mr-2"></i> Profil
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a href="{{ route('auth.logout') }}" class="dropdown-item">
-                        <i class="fas fa-sign-out mr-2"></i> Se déconnecter
-                    </a>
+                    <form action="{{ route('auth.logout') }}" method="POST" class="d-inline">
+                        @method('DELETE')
+                        @csrf
+                        <button class="dropdown-item" type="submit">
+                            <i class="fas fa-sign-out mr-2"></i> Se déconnecter
+                        </button>
+                    </form>
                 @endauth
             </div>
         </li>

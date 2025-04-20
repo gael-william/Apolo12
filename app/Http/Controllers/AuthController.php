@@ -14,21 +14,29 @@ class AuthController extends Controller
     }
 
     public function login(Request $request)
-    {
-        $credentials = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required'
-        ]);
-    
-        if (Auth::attempt($credentials, $request->has('remember'))) {
-            $request->session()->regenerate();
+{
+    $credentials = $request->validate([
+        'email' => 'required|email',
+        'password' => 'required'
+    ]);
+
+    if (Auth::attempt($credentials, $request->has('remember'))) {
+        $request->session()->regenerate();
+
+        $user = Auth::user();
+
+        if ($user->role === 'super_admin') {
             return redirect()->route('admin.dashboard');
+        } elseif ($user->role === 'admin') {
+            return redirect()->route('admin.boutiques.show', $user->boutique_id);
         }
-    
-        return back()->withErrors([
-            'email' => 'Identifiants incorrects.'
-        ])->onlyInput('email');
     }
+
+    return back()->withErrors([
+        'email' => 'Identifiants incorrects.'
+    ])->onlyInput('email');
+}
+
 
     public function logout(Request $request)
     {

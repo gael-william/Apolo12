@@ -18,7 +18,11 @@
                             </div>
                             <div class="col-md-6">
                                 <p><strong>Description:</strong> {{ $boutique->description }}</p>
-                                <p><strong>Téléphone:</strong> {{ $boutique->phone }}</p>
+                                <p><strong>Propriétaire:</strong> {{ $boutique->owner_name }}</p>
+                                {{-- <p><strong>Téléphone:</strong> {{ $boutique->phone }}</p> --}}
+                                <p><strong>Type d'entreprise:</strong> {{ ucfirst($boutique->business_type) }}</p>
+                                <p><strong>Ville:</strong> {{ $boutique->city }}</p>
+                                
                                 {{-- <p><strong>Adresse:</strong> {{ $boutique->location }}</p> --}}
                             </div>
                             <div class="col-md-12 py-2ph">

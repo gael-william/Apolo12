@@ -60,7 +60,7 @@
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
                                 </div>
-                                <a href="{{ route('admin.commandes.show') }}" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="{{ route('admin.boutiques.index') }}" class="small-box-footer">Voir plus <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
 

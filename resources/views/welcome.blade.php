@@ -6,7 +6,7 @@
 
 
         <!-- Offers Start -->
-        <!-- <div class="main-banner-slider">
+       <div class="main-banner-slider">
 			
 		
 			<div class="container-fluid">
@@ -97,7 +97,7 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
         <!-- Offers End -->
         <!-- Categories Start -->
         <div class="section145">
@@ -185,7 +185,7 @@
 
         <a href="https://wa.me/+22602101008" class="whatsapp-fixed" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
-        </a> --}}
+        </a> 
 
 
         <!-- Featured Products End -->
