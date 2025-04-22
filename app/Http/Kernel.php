@@ -20,5 +20,12 @@ class Kernel extends HttpKernel
     ];
     
 
-    // ...
+    // ✅ Ajoute ici ton middleware personnalisé :
+    protected $routeMiddleware = [
+        // 'auth' => \App\Http\Middleware\Authenticate::class,
+        'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'is_super_admin' => \App\Http\Middleware\IsSuperAdmin::class,
+        // autres middlewares...
+    ];
+    
 }

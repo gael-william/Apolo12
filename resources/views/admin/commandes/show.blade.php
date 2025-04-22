@@ -27,13 +27,13 @@
 
 
                     <!-- Liste des commandes -->
-                    <h2 class="card-header text-center">Liste des Commandes</h2>
+                    <h2 class="card-header text-center">Liste des Commandes de la boutique {{ $boutique->name }}</h2>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered table-striped">
                                 <thead class="text-center">
                                     <tr>
-                                        <th>#</th>
+                                        {{-- <th>#</th> --}}
                                         <th>Date</th>
                                         <th>Nom Client</th>
                                         <th>Numéro de Téléphone</th>
@@ -43,9 +43,9 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    @foreach ($commandes as $commande)
+                                    @foreach ($commandes->where('boutique_id', $boutique->id) as $commande)
                                         <tr>
-                                            <td>{{ $commande->id }}</td>
+                                            {{-- <td>{{ $commande->id }}</td> --}}
                                             <td>{{ $commande->created_at }}</td>
                                             <td>{{ $commande->nom_client }}</td>
                                             <td>{{ $commande->numero_telephone }}</td>
