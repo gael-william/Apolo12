@@ -9,7 +9,7 @@
        <div class="main-banner-slider">
 			
 		
-			<div class="container-fluid">
+			<!-- <div class="container-fluid">
 				<div class="row">
 					<div class="col-md-12">
 						<div class="owl-carousel offers-banner owl-theme">
@@ -96,7 +96,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
         <!-- Offers End -->
         <!-- Categories Start -->

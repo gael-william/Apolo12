@@ -87,7 +87,7 @@
             </div>
             <div class="search120">
                 <div class="header_search position-relative">
-                    <input class="prompt srch10" type="text" placeholder="Search for products..">
+                    <input class="prompt srch10" type="text" placeholder="Rechercher vos produits..">
                     <i class="uil uil-search s-icon"></i>
                 </div>
             </div>
@@ -173,16 +173,16 @@
                     <div class="offcanvas-body">
                         <div class="offcanvas-category mb-4 d-block d-lg-none">
                             <div class="offcanvas-search position-relative">
-                                <input class="canvas_search" type="text" placeholder="Search for products..">
+                                <input class="canvas_search" type="text" placeholder="Rechercher vos produits..">
                                 <i class="uil uil-search hover-btn canvas-icon"></i>
-                            </div>
-                            <button class="category_drop_canvas hover-btn mt-4" data-bs-toggle="modal"
-                                data-bs-target="#category_model" title="Categories"><i class="uil uil-apps"></i><span
-                                    class="cate__icon">Select Category</span></button>
                         </div>
+                            <!-- <button class="category_drop_canvas hover-btn mt-4" data-bs-toggle="modal"
+                                data-bs-target="#category_model" title="Categories"><i class="uil uil-apps"></i><span
+                                    class="cate__icon">Select Category</span></button> -->
+                     </div>
                         <ul class="navbar-nav justify-content-start flex-grow-1 pe_5">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
                             </li>
                             {{-- <li class="nav-item">
                              <a class="nav-link" href="shop_grid.html">New Products</a>
@@ -231,21 +231,21 @@
                              </ul>
                          </li> --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="contact_us.html">Contact Us</a>
+                                <a class="nav-link" href="contact_us.html">Qui sommes-nous?</a>
                             </li>
                         </ul>
                         <div class="d-block d-lg-none">
                             <ul class="offcanvas-help-links">
-                                <li><a href="#" class="offer-link"><i class="fas fa-phone" style="font-size: 20px; color: #007bff;"></i>+226 06-59-89-19/ 02-10-10-08</a>
+                                <li>
+                                    <a href="#" class="offer-link"><i class="fas fa-phone" style="font-size: 20px; color: #f55d2c;"></i> +226 06-59-89-19/ 02-10-10-08</a>
                               </li>
-                                <li><a href="offers.html" class="offer-link"><i class="uil uil-gift"></i>Offers</a>
-                                </li>
-                                <li><a href="faq.html" class="offer-link"><i
-                                            class="uil uil-question-circle"></i>Help</a></li>
+                              <li><a href="mailto:info@kitiga.com" class="callemail"><i class="uil uil-envelope-alt" style="font-size: 20px; color: #f55d2c;"></i> info@kitiga.com</a></li>
+                                <li>
+                                    <a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Help</a></li>
                             </ul>
                             <div class="offcanvas-copyright">
-                                <i class="uil uil-copyright"></i>Copyright 2024 <b>Kitiga</b> . All rights
-                                reserved
+                                <i class="uil uil-copyright"></i>Copyright 2024 <b>Kitiga</b> . Tous droits réservés
+                                
                             </div>
                         </div>
                     </div>
