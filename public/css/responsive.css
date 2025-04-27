@@ -107,7 +107,7 @@
 }
 
 .category_drop {
-    display: none;
+    display: inline-block;
 }
 
 .cart__btn span {

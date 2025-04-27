@@ -102,7 +102,7 @@ $('.offers-banner').owlCarousel({
     margin:15,
 	nav:false,
 	dots:false,
-    autoplay:true,
+    // autoplay:true,
     autoplayTimeout: 3000,
     autoplayHoverPause:true,
 	responsive:{
@@ -308,3 +308,5 @@ $(document).keydown(function (event) {
 		return false;
 	}
 });
+
+
