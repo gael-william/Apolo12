@@ -21,7 +21,7 @@
                             @if ($products->count() > 0)
                                 <div class="row">
                                     @foreach ($products as $product)
-                                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                        <div class="col-lg-2 col-md-4 col-sm-3 mb-4">
                                             <div class="card product-card shadow-sm">
                                                 <img src="{{ asset('storage/' . $product->image_url) }}" class="card-img-top product-image" alt="{{ $product->name }}">
                                                 <div class="card-body text-center">
