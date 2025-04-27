@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // Page d'accueil
-Route::get('/', [ProductController::class, 'welcome']);
+Route::get('/', [ProductController::class, 'welcome'])->name('welcome');
 
 // Routes d'authentification
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
@@ -42,13 +42,15 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
             Route::get('/{id}/edit', [BoutiqueController::class, 'edit'])->name('edit');
             Route::put('/{id}', [BoutiqueController::class, 'update'])->name('update');
             Route::delete('/{id}', [BoutiqueController::class, 'destroy'])->name('destroy');
-            Route::get('/admin/boutiques/{boutique}/produits/{category}', [BoutiqueController::class, 'productsByCategory'])->name('products');
+
         });
     });
+
     Route::prefix('boutiques')->name('admin.boutiques.')->group(function () {
         Route::get('/{id}', [BoutiqueController::class, 'show_admin'])->name('show');
-
+        Route::get('/admin/boutiques/{boutique}/produits/{category}', [BoutiqueController::class, 'productsByCategory'])->name('products');
     });
+    
 
  
     Route::prefix('produits')->name('admin.produits.')->group(function () {

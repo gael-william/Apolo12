@@ -82,8 +82,8 @@
     <div class="top-header-group">
         <div class="top-header">
             <div class="main_logo" id="logo">
-                <a href="index.html"><img src="{{ asset('images/logo2.png') }}" alt=""></a>
-                <a href="index.html"><img class="logo-inverse" src="images/dark-logo.svg" alt=""></a>
+                <a href="{{ route('welcome') }}"><img src="{{ asset('images/logo2.png') }}" alt=""></a>
+                <a href="{{ route('welcome') }}"><img class="logo-inverse" src="images/dark-logo.svg" alt=""></a>
             </div>
             <div class="search120">
                 <div class="header_search position-relative">

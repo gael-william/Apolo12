@@ -56,10 +56,11 @@
                 </div>
 
                 <div class="card-footer mt-3">
-                    {{-- <a class="btn btn-success" href="{{ route('boutiques.show', $commande->boutique->id) }}">Retour à la boutique</a> --}}
+                    <button><a href="{{ route('boutique.show', $commande->boutique->id) }}" class="btn btn-danger btn-sm">Retour à la boutique</a></button>
                     <button id="button" class="btn btn-info">Télécharger <i class="fa fa-download"></i></button>
                 </div>
                 <br><br>
+
             </div>
             <div class="col-3"></div>
         </div>
