@@ -27,17 +27,24 @@
                                                 <div class="card-body text-center">
                                                     <h5 class="card-title">{{ $product->name }}</h5>
                                                     <p class="text-muted">{{ $product->category }}</p>
-                                                    <p class="card-text">{{ Str::limit($product->description, 50) }}</p>
                                                     <h5 class="text-primary font-weight-bold">{{ number_format($product->price, 0, ',', ' ') }} F</h5>
-                                                    <div class="d-flex justify-content-center">
-                                                        <td>
-                                                            <a href="{{ route('admin.boutiques.products.edit', [$boutique->id, $product->id]) }}" class="btn btn-sm btn-info d-inline">Modifier</a>
-                                                            <form action="{{ route('admin.boutiques.products.destroy', [$boutique->id, $product->id]) }}" method="POST" class="d-inline">
-                                                                @csrf
-                                                                @method('DELETE')
-                                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?')">Supprimer</button>
-                                                            </form>
-                                                        </td>
+                                                    <button 
+                                                        class="btn btn-sm btn-primary open-modal" 
+                                                        data-bs-toggle="modal" 
+                                                        data-bs-target="#productDetailModal"
+                                                        data-name="{{ $product->name }}"
+                                                        data-price="{{ number_format($product->price, 0, ',', ' ') }} F"
+                                                        data-description="{{ $product->description }}"
+                                                        data-image="{{ asset('storage/' . $product->image_url) }}">
+                                                        Voir détail
+                                                    </button>
+                                                    <div class="d-flex justify-content-center mt-2">
+                                                        <a href="{{ route('admin.boutiques.products.edit', [$boutique->id, $product->id]) }}" class="btn btn-sm btn-info d-inline">Modifier</a>
+                                                        <form action="{{ route('admin.boutiques.products.destroy', [$boutique->id, $product->id]) }}" method="POST" class="d-inline">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce produit ?')">Supprimer</button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
@@ -48,10 +55,29 @@
                                 <p class="text-center">Aucun produit ajouté.</p>
                             @endif
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Modal Détail Produit -->
+<div class="modal fade" id="productDetailModal" tabindex="-1" aria-labelledby="productDetailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="productDetailModalLabel">Détail du produit</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img id="modalProductImage" src="" class="img-fluid mb-3" style="max-height: 300px;" alt="">
+                <h4 id="modalProductName" class="fw-bold"></h4>
+                <p id="modalProductDescription"></p>
+                <h5 id="modalProductPrice" class="text-primary fw-bold"></h5>
+            </div>
+        </div>
+    </div>
+</div>
+
     </section>
 </div>
 @endsection

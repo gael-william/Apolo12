@@ -150,7 +150,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Cropper.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('productDetailModal');
+            const name = modal.querySelector('#modalProductName');
+            const description = modal.querySelector('#modalProductDescription');
+            const price = modal.querySelector('#modalProductPrice');
+            const image = modal.querySelector('#modalProductImage');
+    
+            document.querySelectorAll('.open-modal').forEach(button => {
+                button.addEventListener('click', () => {
+                    name.textContent = button.getAttribute('data-name');
+                    description.textContent = button.getAttribute('data-description');
+                    price.textContent = button.getAttribute('data-price');
+                    image.src = button.getAttribute('data-image');
+                });
+            });
+        });
+    </script>
+    
 </body>
 
 </html>
