@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image_url')->nullable();
             $table->text('description')->nullable();
+            $table->boolean('stock')->default(1); // 1 = en stock, 0 = rupture
             $table->string('category');
             $table->decimal('price', 10, 2);
             $table->string('certificate')->nullable();
