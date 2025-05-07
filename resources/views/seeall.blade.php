@@ -58,8 +58,8 @@
 										</div>
 									</a>
 									<div class="product-text-dt">
-										<p>Available<span>(In Stock)</span></p>
-										<p>Boutique<span>(
+										<p>Available<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span>
+										</p> 										<p>Boutique<span>(
 											<a href="{{ route('boutique.show', ['id' => $produit->boutique->id]) }}">
 												{{ $produit->boutique->name ?? 'Non attribué' }}
 											</a>

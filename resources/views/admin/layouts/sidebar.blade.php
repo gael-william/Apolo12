@@ -3,7 +3,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
         <img src="{{ asset('images/logo2.png') }}" alt="K.com" class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">K.com</span>
+        <span class="brand-text font-weight-light">PFNL.com</span>
     </a>
   
     <!-- Sidebar -->

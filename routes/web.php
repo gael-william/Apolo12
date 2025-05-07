@@ -78,6 +78,9 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
 
     // Supprimer un produit
     Route::delete('admin/boutiques/{boutique}/produits/{product}', [ProductController::class, 'destroy'])->name('admin.boutiques.products.destroy');
+
+    Route::patch('/admin/produits/{id}/toggle-stock', [ProductController::class, 'toggleStock'])->name('admin.products.toggleStock');
+
 });
 
 // Routes publiques pour voir les boutiques

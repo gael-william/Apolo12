@@ -12,7 +12,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="description" content="Gambolthemes">
     <meta name="author" content="Gambolthemes">
-    <title>K.com</title>
+    <title>PFNL.com</title>
 
     <!-- Favicon Icon -->
     <link rel="icon" type="image/png" href="images/logo2.png">

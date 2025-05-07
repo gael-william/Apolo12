@@ -189,5 +189,20 @@ public function seeAll(Request $request)
 }
 
 
-    
+public function toggleStock($id)
+{
+    $product = Product::findOrFail($id);
+    $product->stock = $product->stock > 0 ? 0 : 1;
+    $product->save();
+
+    if (request()->ajax()) {
+        return response()->json([
+            'new_status' => $product->stock,
+            'message' => 'Statut de stock mis à jour.'
+        ]);
+    }
+
+    return back()->with('success', 'Statut de stock mis à jour.');
+}
+
 }
