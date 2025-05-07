@@ -147,7 +147,7 @@
                      </div>
                         <ul class="navbar-nav justify-content-start flex-grow-1 pe_5">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+                            <a class="nav-link active" href="{{ route('welcome') }}">Accueil</a>
                             </li>
                             {{-- <li class="nav-item">
                              <a class="nav-link" href="shop_grid.html">New Products</a>
