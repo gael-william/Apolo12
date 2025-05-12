@@ -3,98 +3,98 @@
     <!-- Body Start -->
     <div class="wrapper">
         <!-- Offers Start -->
-       <div class="main-banner-slider">
-			
-		
-			<!-- <div class="container-fluid">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="owl-carousel offers-banner owl-theme">
-							<div class="item">
-								<div class="offer-item">								
-									<div class="offer-item-img">
-										<div class="gambo-overlay"></div>
-										<img src="images/banners/offer-1.jpg" alt="">
-									</div>
-									<div class="offer-text-dt">
-										<div class="offer-top-text-banner">
-											<p>6% Off</p>
-											<div class="top-text-1">Buy More & Save More</div>
-											<span>Fresh Vegetables</span>
-										</div>
-										<a href="shop_grid.html" class="Offer-shop-btn hover-btn">Shop Now</a>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="offer-item">								
-									<div class="offer-item-img">
-										<div class="gambo-overlay"></div>
-										<img src="images/banners/offer-2.jpg" alt="">
-									</div>
-									<div class="offer-text-dt">
-										<div class="offer-top-text-banner">
-											<p>5% Off</p>
-											<div class="top-text-1">Buy More & Save More</div>
-											<span>Fresh Fruits</span>
-										</div>
-										<a href="shop_grid.html" class="Offer-shop-btn hover-btn">Shop Now</a>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="offer-item">								
-									<div class="offer-item-img">
-										<div class="gambo-overlay"></div>
-										<img src="images/banners/offer-3.jpg" alt="">
-									</div>
-									<div class="offer-text-dt">
-										<div class="offer-top-text-banner">
-											<p>3% Off</p>
-											<div class="top-text-1">Hot Deals on New Items</div>
-											<span>Daily Essentials Eggs & Dairy</span>
-										</div>
-										<a href="shop_grid.html" class="Offer-shop-btn hover-btn">Shop Now</a>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="offer-item">								
-									<div class="offer-item-img">	
-										<div class="gambo-overlay"></div>
-										<img src="images/banners/offer-4.jpg" alt="">
-									</div>
-									<div class="offer-text-dt">
-										<div class="offer-top-text-banner">
-											<p>2% Off</p>
-											<div class="top-text-1">Buy More & Save More</div>
-											<span>Beverages</span>
-										</div>
-										<a href="shop_grid.html" class="Offer-shop-btn hover-btn">Shop Now</a>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="offer-item">								
-									<div class="offer-item-img">
-										<div class="gambo-overlay"></div>
-										<img src="images/banners/offer-5.jpg" alt="">
-									</div>
-									<div class="offer-text-dt">
-										<div class="offer-top-text-banner">
-											<p>3% Off</p>
-											<div class="top-text-1">Buy More & Save More</div>
-											<span>Nuts & Snacks</span>
-										</div>
-										<a href="shop_grid.html" class="Offer-shop-btn hover-btn">Shop Now</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
-		</div>
+        <div class="main-banner-slider">
+
+
+            <!-- <div class="container-fluid">
+        <div class="row">
+         <div class="col-md-12">
+          <div class="owl-carousel offers-banner owl-theme">
+           <div class="item">
+            <div class="offer-item">
+             <div class="offer-item-img">
+              <div class="gambo-overlay"></div>
+              <img src="images/banners/offer-1.jpg" alt="">
+             </div>
+             <div class="offer-text-dt">
+              <div class="offer-top-text-banner">
+               <p>6% Off</p>
+               <div class="top-text-1">Buy More & Save More</div>
+               <span>Fresh Vegetables</span>
+              </div>
+              <a href="shop_grid.html" class="Offer-shop-btn hover-btn">Shop Now</a>
+             </div>
+            </div>
+           </div>
+           <div class="item">
+            <div class="offer-item">
+             <div class="offer-item-img">
+              <div class="gambo-overlay"></div>
+              <img src="images/banners/offer-2.jpg" alt="">
+             </div>
+             <div class="offer-text-dt">
+              <div class="offer-top-text-banner">
+               <p>5% Off</p>
+               <div class="top-text-1">Buy More & Save More</div>
+               <span>Fresh Fruits</span>
+              </div>
+              <a href="shop_grid.html" class="Offer-shop-btn hover-btn">Shop Now</a>
+             </div>
+            </div>
+           </div>
+           <div class="item">
+            <div class="offer-item">
+             <div class="offer-item-img">
+              <div class="gambo-overlay"></div>
+              <img src="images/banners/offer-3.jpg" alt="">
+             </div>
+             <div class="offer-text-dt">
+              <div class="offer-top-text-banner">
+               <p>3% Off</p>
+               <div class="top-text-1">Hot Deals on New Items</div>
+               <span>Daily Essentials Eggs & Dairy</span>
+              </div>
+              <a href="shop_grid.html" class="Offer-shop-btn hover-btn">Shop Now</a>
+             </div>
+            </div>
+           </div>
+           <div class="item">
+            <div class="offer-item">
+             <div class="offer-item-img">
+              <div class="gambo-overlay"></div>
+              <img src="images/banners/offer-4.jpg" alt="">
+             </div>
+             <div class="offer-text-dt">
+              <div class="offer-top-text-banner">
+               <p>2% Off</p>
+               <div class="top-text-1">Buy More & Save More</div>
+               <span>Beverages</span>
+              </div>
+              <a href="shop_grid.html" class="Offer-shop-btn hover-btn">Shop Now</a>
+             </div>
+            </div>
+           </div>
+           <div class="item">
+            <div class="offer-item">
+             <div class="offer-item-img">
+              <div class="gambo-overlay"></div>
+              <img src="images/banners/offer-5.jpg" alt="">
+             </div>
+             <div class="offer-text-dt">
+              <div class="offer-top-text-banner">
+               <p>3% Off</p>
+               <div class="top-text-1">Buy More & Save More</div>
+               <span>Nuts & Snacks</span>
+              </div>
+              <a href="shop_grid.html" class="Offer-shop-btn hover-btn">Shop Now</a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div> -->
+        </div>
         <!-- Offers End -->
         <!-- Categories Start -->
         <div class="section145">
@@ -134,9 +134,9 @@
                                 <h2 class="cosmetique-elite">Nos Produits Stars</h2>
                             </div>
                             <!-- <a href="{{ route('admin.boutiques.products', $menusLesPlusCommandes->first()->boutique_id ?? 1) }}"
-                                    class="see-more-btn">
-                                    Voir Plus
-                                </a> -->
+                                        class="see-more-btn">
+                                        Voir Plus
+                                    </a> -->
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -193,13 +193,13 @@
             <div class="container">
                 <div class="row">
                     <!-- <div class="col-md-12">
-                                  <div class="main-title-tt">
-                                   <div class="main-title-left">
-                                    <span>Offers</span>
-                                    <h2 class="cosmetique-elite">COSMÉTIQUE</h2>
-                                   </div>
-                                  </div>
-                                 </div> -->
+                                      <div class="main-title-tt">
+                                       <div class="main-title-left">
+                                        <span>Offers</span>
+                                        <h2 class="cosmetique-elite">COSMÉTIQUE</h2>
+                                       </div>
+                                      </div>
+                                     </div> -->
                     <div class="col-lg-4 col-md-6">
                         <a href="#" class="best-offer-item">
                             <img src="images/best-offers/img1.jpg" alt="">
@@ -214,8 +214,8 @@
                         <a href="#" class="best-offer-item offr-none">
                             <img src="images/best-offers/img3.jpg" alt="">
                             <!-- <div class="cmtk_dt">
-                                    <div class="product_countdown-timer offer-counter-text" data-countdown="2022/08/09"></div>
-                                   </div> -->
+                                        <div class="product_countdown-timer offer-counter-text" data-countdown="2022/08/09"></div>
+                                       </div> -->
                             <!-- <p>reserver pour presenter K.com</p> -->
                         </a>
                     </div>
@@ -259,8 +259,9 @@
                                         </div>
                                         </a>
                                         <div class="product-text-dt">
-                                            <p>Available<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span>
-                                            </p>                                             <p>Boutique<span>(
+                                            <p><span>{{ $produit->stock > 0 ? 'Disponible' : 'Stock Epuisé' }}</span>
+                                            </p>
+                                            <p>Boutique<span>(
                                                     <a
                                                         href="{{ route('boutique.show', ['id' => $produit->boutique->id]) }}">
                                                         {{ $produit->boutique->name ?? 'Non attribué' }}
@@ -325,8 +326,8 @@
                                         </div>
                                         </a>
                                         <div class="product-text-dt">
-                                             <p>Available<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span>
-                                                </p> 
+                                            <p><span>{{ $produit->stock > 0 ? 'Disponible' : 'Stock Epuisé' }}</span>
+                                            </p>
                                             <p>Boutique<span>(
                                                     <a
                                                         href="{{ route('boutique.show', ['id' => $produit->boutique->id]) }}">
@@ -392,8 +393,8 @@
                                         </div>
                                         </a>
                                         <div class="product-text-dt">
-                                            <p>Available<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span>
-                                            </p> 
+                                            <p><span>{{ $produit->stock > 0 ? 'Disponible' : 'Stock Epuisé' }}</span>
+                                            </p>
                                             <p>Boutique<span>(
                                                     <a
                                                         href="{{ route('boutique.show', ['id' => $produit->boutique->id]) }}">

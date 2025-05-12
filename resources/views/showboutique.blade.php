@@ -68,8 +68,8 @@
                                         <span class="like-icon" title="wishlist"></span>
                                     </div>
                                     <div class="product-text-dt">
-                                        <p>Available<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span>
-                                        </p>                                         <h4>{{ $produit->name }}</h4>
+                                    <p><span>{{ $produit->stock > 0 ? 'Disponible' : 'Stock Epuisé' }}</span>
+                                    </p>                                         <h4>{{ $produit->name }}</h4>
                                         <div class="product-price">{{ $produit->price }} F CFA</div>
                                         <button class="btn btn-success open-modal" data-id="{{ $produit->id }}"
                                             data-name="{{ $produit->name }}" data-price="{{ $produit->price }}"
