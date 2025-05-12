@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Boutique;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -139,16 +140,20 @@ public function destroy($id)
 public function show_admin($id)
 {
     $boutique = Boutique::findOrFail($id);
-    return view('admin.boutique.show', compact('boutique'));
-}
+    $categories = Category::all(); // Ajout de cette ligne
 
+    return view('admin.boutique.show', compact('boutique', 'categories'));
+}
 
 public function show($id)
 {
     $boutique = Boutique::findOrFail($id);
     $produits = Product::where('boutique_id', $id)->get();
-    
-    return view('showboutique', compact('boutique', 'produits'));
+
+    // Exclure les catégories "classiques"
+    $categoriesDynamiques = Category::whereNotIn('name', ['Alimentation', 'Cosmétique', 'Pharmacopée'])->get();
+
+    return view('showboutique', compact('boutique', 'produits', 'categoriesDynamiques'));
 }
 
 
