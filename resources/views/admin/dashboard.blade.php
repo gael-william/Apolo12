@@ -94,6 +94,9 @@
                             </div>
                         </div>
                     </div>
+                     <div class="col-12">
+            <a href="{{ route('admin.categories.create', $boutique->id) }}" class="btn btn-primary">Ajouter catégories</a>
+        </div>
                 @else
                     <p style="font-size:100px;color:red">Vous n'avez pas accès aux statistiques.</p>
                 @endif

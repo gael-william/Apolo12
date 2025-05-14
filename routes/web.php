@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BoutiqueController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -80,6 +81,11 @@ Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
     Route::delete('admin/boutiques/{boutique}/produits/{product}', [ProductController::class, 'destroy'])->name('admin.boutiques.products.destroy');
 
     Route::patch('/admin/produits/{id}/toggle-stock', [ProductController::class, 'toggleStock'])->name('admin.products.toggleStock');
+
+    //categories
+    Route::post('/admin/categories', [CategoryController::class, 'store'])->name('admin.categories.store');
+    Route::get('/admin/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
+
 
 });
 

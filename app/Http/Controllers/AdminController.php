@@ -21,6 +21,8 @@ class AdminController extends Controller
             // 'ads' => Publicite::count(),
         ];
 
-        return view('admin.dashboard', compact('stats'));
+        $boutique = Boutique::first();
+
+        return view('admin.dashboard', compact('stats', 'boutique'));
     }
 }

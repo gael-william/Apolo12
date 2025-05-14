@@ -154,7 +154,7 @@
                                         </div>
 
                                         <div class="product-text-dt">
-                                            <!-- <p>Available<span>(In Stock)</span></p> -->
+                                            <!-- <p>Stock<span>(In Stock)</span></p> -->
                                             <p>Boutique<span>(
                                                     <a
                                                         href="{{ route('boutique.show', ['id' => $product->boutique->id]) }}">
@@ -259,7 +259,7 @@
                                         </div>
                                         </a>
                                         <div class="product-text-dt">
-                                            <p><span>{{ $produit->stock > 0 ? 'Disponible' : 'Stock Epuisé' }}</span>
+                                            <p>Stock<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span>
                                             </p>
                                             <p>Boutique<span>(
                                                     <a
@@ -326,7 +326,7 @@
                                         </div>
                                         </a>
                                         <div class="product-text-dt">
-                                            <p><span>{{ $produit->stock > 0 ? 'Disponible' : 'Stock Epuisé' }}</span>
+                                            <p>Stock<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span>
                                             </p>
                                             <p>Boutique<span>(
                                                     <a
@@ -343,15 +343,7 @@
                                                 data-image="{{ asset('storage/' . $produit->image_url) }}">
                                                 Voir détails
                                             </button>
-                                            {{-- <div class="qty-cart">
-                                                <div class="quantity buttons_added">
-                                                    <input type="button" value="-" class="minus minus-btn">
-                                                    <input type="number" step="1" name="quantity" value="1"
-                                                        class="input-text qty text">
-                                                    <input type="button" value="+" class="plus plus-btn">
-                                                </div>
-                                                <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                            </div> --}}
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -383,7 +375,6 @@
                             @foreach ($produitsPharmacopee as $produit)
                                 <div class="item">
                                     <div class="product-item">
-                                        {{-- <a href="{{ route('product.show', $produit->id) }}" class="product-img"> --}}
                                         <img src="{{ asset('storage/' . $produit->image_url) }}"
                                             class="card-img-top product-image" alt="{{ $produit->name }}">
 
@@ -393,7 +384,7 @@
                                         </div>
                                         </a>
                                         <div class="product-text-dt">
-                                            <p><span>{{ $produit->stock > 0 ? 'Disponible' : 'Stock Epuisé' }}</span>
+                                            <p>Stock<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span>
                                             </p>
                                             <p>Boutique<span>(
                                                     <a
@@ -410,15 +401,7 @@
                                                 data-image="{{ asset('storage/' . $produit->image_url) }}">
                                                 Voir détails
                                             </button>
-                                            {{-- <div class="qty-cart">
-                                                <div class="quantity buttons_added">
-                                                    <input type="button" value="-" class="minus minus-btn">
-                                                    <input type="number" step="1" name="quantity" value="1"
-                                                        class="input-text qty text">
-                                                    <input type="button" value="+" class="plus plus-btn">
-                                                </div>
-                                                <span class="cart-icon"><i class="uil uil-shopping-cart-alt"></i></span>
-                                            </div> --}}
+                                         
                                         </div>
                                     </div>
                                 </div>
@@ -429,6 +412,63 @@
             </div>
         </div>
         <!-- New Products End -->
+
+        @foreach ($categoriesDynamiques as $categorie)
+    @php
+        $produits = \App\Models\Product::where('category', $categorie->name)->latest()->take(8)->get();
+    @endphp
+    @if ($produits->count())
+        <div class="section145 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="main-title-tt">
+                            <div class="main-title-left">
+                                <span>Pour Vous</span>
+                                <h2 class="cosmetique-elite">{{ strtoupper($categorie->name) }}</h2>
+                            </div>
+                            <a href="{{ route('seeall', ['category' => Str::slug($categorie->name)]) }}" class="see-more-btn">Voir tout</a>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="owl-carousel featured-slider owl-theme">
+                            @foreach ($produits as $produit)
+                                <div class="item">
+                                    <div class="product-item">
+                                        <img src="{{ asset('storage/' . $produit->image_url) }}" class="card-img-top product-image" alt="{{ $produit->name }}">
+                                        <div class="product-absolute-options">
+                                            <span class="offer-badge-1">New</span>
+                                            <span class="like-icon" title="wishlist"></span>
+                                        </div>
+                                        <div class="product-text-dt">
+                                            <p>Stock<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span></p>
+                                            <p>Boutique<span>(
+                                                <a href="{{ route('boutique.show', ['id' => $produit->boutique->id]) }}">
+                                                    {{ $produit->boutique->name ?? 'Non attribué' }}
+                                                </a>
+                                            )</span></p>
+                                            <h4>{{ $produit->name }}</h4>
+                                            <div class="product-price">{{ $produit->price }} F CFA</div>
+                                            <button class="btn btn-success open-modal"
+                                                data-id="{{ $produit->id }}"
+                                                data-name="{{ $produit->name }}"
+                                                data-price="{{ $produit->price }}"
+                                                data-description="{{ $produit->description }}"
+                                                data-image="{{ asset('storage/' . $produit->image_url) }}">
+                                                Voir détails
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+@endforeach
+
 
 
         <!-- Modal -->

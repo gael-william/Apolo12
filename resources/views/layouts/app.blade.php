@@ -350,6 +350,28 @@
             });
         });
     </script>
+
+
+{{-- Barre de recherche --}}
+ <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("searchInput");
+            const productCards = document.querySelectorAll(".product-card");
+
+            searchInput.addEventListener("input", function() {
+                const query = this.value.toLowerCase();
+
+                productCards.forEach(card => {
+                    const productName = card.getAttribute("data-name");
+                    if (productName.includes(query)) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 <!-- Mirrored from gambolthemes.net/html-items/gambo_supermarket_demo_new/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Aug 2024 12:35:36 GMT -->

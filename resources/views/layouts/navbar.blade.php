@@ -1,49 +1,4 @@
 <!-- Category Model Start -->
-<div class="header-cate-model main-gambo-model modal fade" id="category_model" tabindex="-1" role="dialog"
-    aria-modal="false">
-    <div class="modal-dialog category-area" role="document">
-        <div class="category-area-inner">
-            <div class="modal-header">
-                <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close">
-                    <i class="uil uil-multiply"></i>
-                </button>
-            </div>
-            <div class="category-model-content modal-content">
-                <div class="cate-header">
-                    <h4>Select Category</h4>
-                </div>
-                <ul class="category-by-cat">
-                    <li>
-                        <a href="#" class="single-cat-item category-filter" data-category="alimentation">
-                            <div class="icon">
-                                <img src="{{ asset('images/category/icon-7.svg') }}" alt="">
-                                {{-- <link href="{{ asset('vendor/unicons-2.0.1/css/unicons.css') }}" rel="stylesheet"> --}}
-
-                            </div>
-                            <div class="text"> Alimentation </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="single-cat-item category-filter" data-category="pharmacopée">
-                            <div class="icon">
-                                <img src="{{ asset('images/category/icon-4.svg') }}" alt="">
-                            </div>
-                            <div class="text"> Pharmacopée </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="single-cat-item category-filter" data-category="cosmétique">
-                            <div class="icon">
-                                <img src="{{ asset('images/category/icon-6.svg') }}" alt="">
-                            </div>
-                            <div class="text"> Cosmétique </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Category Model End -->
 
 <!-- Cart Sidebar Offcanvas Start-->
@@ -53,7 +8,7 @@
     <div class="offcanvas-header bs-canvas-header side-cart-header p-3">
         <div class="d-inline-block main-cart-title" id="offcanvasRightLabel">
             My Cart <span id="cart-count">(0 Items)</span>
-        </div>        <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+        </div> <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
             <i class="uil uil-multiply"></i>
         </button>
     </div>
@@ -69,12 +24,12 @@
         <div class="mb-2 px-3">
             <input type="text" id="userPhone" class="form-control" placeholder="Votre numéro de téléphone">
         </div>
-        
+
         <div class="checkout-cart px-3">
             <button id="checkout-btn" class="cart-checkout-btn hover-btn w-100">Commander</button>
         </div>
     </div>
-    
+
 </div>
 <!-- Cart Sidebar Offcanvas End-->
 <!-- Header Start -->
@@ -83,29 +38,26 @@
         <div class="top-header">
             <div class="main_logo" id="logo">
                 <a href="{{ route('welcome') }}"><img src="{{ asset('images/logo2.png') }}" alt=""></a>
-                <a href="{{ route('welcome') }}"><img class="logo-inverse" src="images/dark-logo.svg" alt=""></a>
+                <a href="{{ route('welcome') }}"><img class="logo-inverse" src="images/dark-logo.svg"
+                        alt=""></a>
             </div>
-            <div class="search120">
-                <div class="header_search position-relative">
-                    <input class="prompt srch10" type="text" placeholder="Rechercher vos produits..">
-                    <i class="uil uil-search s-icon"></i>
-                </div>
-            </div>
-            
+           
+
             <div class="header_right">
                 <ul>
-                <li style="list-style: none;">
-                <a href="tel:+22606598919" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1a1a1a; font-family: 'Segoe UI', sans-serif; font-weight: 500; font-size: 16px;">
-                    <i class="fas fa-phone" style="font-size: 20px; color: #007bff;"></i>
-                    Service clientèle : +226 06598919 / 02101008
-                </a>
-                </li>
-                
+                    <li style="list-style: none;">
+                        <a href="tel:+22606598919"
+                            style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1a1a1a; font-family: 'Segoe UI', sans-serif; font-weight: 500; font-size: 16px;">
+                            <i class="fas fa-phone" style="font-size: 20px; color: #007bff;"></i>
+                            Service clientèle : +226 06598919 / 02101008
+                        </a>
+                    </li>
+
                     <li>
                         <a href="dashboard_my_wishlist.html" class="option_links" title="Wishlist"><i
                                 class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -121,8 +73,8 @@
                 </button>
                 <!-- <a href="#" class="category_drop hover-btn" data-bs-toggle="modal"
                     data-bs-target="#category_model" title="Categories"><i class="uil uil-apps"></i><span
-                        class="cate__icon">Select Category</span></a> -->   
-                    
+                        class="cate__icon">Select Category</span></a> -->
+
 
 
                 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
@@ -140,11 +92,11 @@
                             <div class="offcanvas-search position-relative">
                                 <input class="canvas_search" type="text" placeholder="Rechercher vos produits..">
                                 <i class="uil uil-search hover-btn canvas-icon"></i>
-                        </div>
+                            </div>
                             <!-- <button class="category_drop_canvas hover-btn mt-4" data-bs-toggle="modal"
                                 data-bs-target="#category_model" title="Categories"><i class="uil uil-apps"></i><span
                                     class="cate__icon">Select Category</span></button> -->
-                     </div>
+                        </div>
                         <ul class="navbar-nav justify-content-start flex-grow-1 pe_5">
                             <li class="nav-item">
                             <a class="nav-link active" href="{{ route('welcome') }}">Accueil</a>
@@ -200,19 +152,25 @@
                             </li>
                         </ul>
 
-                                
+
                         <div class="d-block d-lg-none">
                             <ul class="offcanvas-help-links">
                                 <li>
-                                    <a href="#" class="offer-link"><i class="fas fa-phone" style="font-size: 20px; color: #f55d2c;"></i> +226 06-59-89-19/ 02-10-10-08</a>
-                              </li>
-                              <li><a href="mailto:info@kitiga.com" class="callemail"><i class="uil uil-envelope-alt" style="font-size: 20px; color: #f55d2c;"></i> info@kitiga.com</a></li>
+                                    <a href="#" class="offer-link"><i class="fas fa-phone"
+                                            style="font-size: 20px; color: #f55d2c;"></i> +226 06-59-89-19/
+                                        02-10-10-08</a>
+                                </li>
+                                <li><a href="mailto:info@kitiga.com" class="callemail"><i
+                                            class="uil uil-envelope-alt" style="font-size: 20px; color: #f55d2c;"></i>
+                                        info@kitiga.com</a></li>
                                 <li>
-                                    <a href="faq.html" class="offer-link"><i class="uil uil-question-circle"></i>Help</a></li>
+                                    <a href="faq.html" class="offer-link"><i
+                                            class="uil uil-question-circle"></i>Help</a>
+                                </li>
                             </ul>
                             <div class="offcanvas-copyright">
                                 <i class="uil uil-copyright"></i>Copyright 2024 <b>Kitiga</b> . Tous droits réservés
-                                
+
                             </div>
                         </div>
                     </div>
@@ -220,11 +178,11 @@
                 <div class="sub_header_right">
                     <div class="header_cart">
                         <a href="#" class="cart__btn hover-btn" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                        <i class="uil uil-shopping-cart-alt"></i><span>Cart</span>
-                        <ins id="cart-count-btn">0</ins> <!-- Nombre d'articles -->
-                        <i class="uil uil-angle-down"></i>
-                    </a>
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <i class="uil uil-shopping-cart-alt"></i><span>Cart</span>
+                            <ins id="cart-count-btn">0</ins> <!-- Nombre d'articles -->
+                            <i class="uil uil-angle-down"></i>
+                        </a>
                     </div>
                 </div>
             </nav>
