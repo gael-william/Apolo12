@@ -55,6 +55,7 @@
                             <i class="uil uil-apps"></i>
                             <span class="cate__icon">Sélectionner la Catégorie</span>
                         </a>
+                        <!-- Category Model Start -->
                         <div class="header-cate-model main-gambo-model modal fade" id="category_model" tabindex="-1"
                             role="dialog" aria-modal="false">
                             <div class="modal-dialog category-area" role="document">
@@ -117,24 +118,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="gambo-Breadcrumb">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="search120">
-                                            <div class="header_search position-relative">
-                                                <input id="searchInput" class="prompt srch10" type="text"
-                                                    placeholder="Rechercher vos produits..">
-                                                <i class="uil uil-search s-icon"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Category Model End -->
                         @foreach ($produits as $produit)
-                            <div class="col-lg-3 col-md-6 product-card" data-name="{{ strtolower($produit->name) }}">
-
+                            <div class="col-lg-3 col-md-6 product-item-container"
+                                data-category="{{ strtolower($produit->category) }}">
                                 <div class="product-item mb-30">
                                     <img src="{{ asset('storage/' . $produit->image_url) }}"
                                         class="card-img-top product-image" alt="{{ $produit->name }}">
@@ -145,7 +132,7 @@
                                         <span class="like-icon" title="wishlist"></span>
                                     </div>
                                     <div class="product-text-dt">
-                                        <p>Available<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span>
+                                        <p><span>{{ $produit->stock > 0 ? 'Disponible' : 'Stock Epuisé' }}</span>
                                         </p>
                                         <h4>{{ $produit->name }}</h4>
                                         <div class="product-price">{{ $produit->price }} F CFA</div>
