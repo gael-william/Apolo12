@@ -83,8 +83,8 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('images/wedga-logo.png') }}" alt="PFNL.com" height="60"
-                width="60">
+            <img class="animation__shake" src="{{ asset('images/wedga-logo.png') }}" alt="PFNL.COM" height="80"
+                width="80">
         </div>
 
         @include('admin.layouts.navbar')

@@ -40,12 +40,12 @@
                 <a href="{{ route('welcome') }}"><img class="logo-inverse" src="images/dark-logo.svg"
                         alt=""></a>
             </div>
-            <div class="search120">
+            {{-- <div class="search120">
                 <div class="header_search position-relative">
                     <input class="prompt srch10" type="text" placeholder="Rechercher vos produits..">
                     <i class="uil uil-search s-icon"></i>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="header_right">
                 <ul>
