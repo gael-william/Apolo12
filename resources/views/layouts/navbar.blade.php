@@ -92,15 +92,7 @@
                         </button>
                     </div>
                     <div class="offcanvas-body">
-                        <div class="offcanvas-category mb-4 d-block d-lg-none">
-                            <div class="offcanvas-search position-relative">
-                                <input class="canvas_search" type="text" placeholder="Rechercher vos produits..">
-                                <i class="uil uil-search hover-btn canvas-icon"></i>
-                            </div>
-                            <!-- <button class="category_drop_canvas hover-btn mt-4" data-bs-toggle="modal"
-                                data-bs-target="#category_model" title="Categories"><i class="uil uil-apps"></i><span
-                                    class="cate__icon">Select Category</span></button> -->
-                        </div>
+                        
                         <ul class="navbar-nav justify-content-start flex-grow-1 pe_5">
                             <li class="nav-item">
                                 <a class="nav-link active" href="{{ route('welcome') }}">Accueil</a>
