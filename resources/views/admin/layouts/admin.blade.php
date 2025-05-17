@@ -125,7 +125,7 @@
     <!-- ChartJS -->
     <script src="{{ asset('assets/admin/plugins/chart.js/Chart.min.js') }}"></script>
     <!-- Sparkline -->
-    <!--script src="{{ /* asset('assets/admin/plugins/sparklines/sparkline.js ')*/ 0 == 0 }}"></script -->
+    <script src="{{  asset('assets/admin/plugins/sparklines/sparkline.js ')}}"></script>
     <!-- JQVMap -->
     <script src="{{ asset('assets/admin/plugins/jqvmap/jquery.vmap.min.js') }}"></script>
     <script src="{{ asset('assets/admin/plugins/jqvmap/maps/jquery.vmap.usa.js') }}"></script>
@@ -144,9 +144,9 @@
     <!-- AdminLTE App -->
     <script src="{{ asset('assets/admin/dist/js/adminlte.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
-    <!-- script src="{{ asset('assets/admin/dist/js/demo.js') }}"></! -->
+    <script src="{{ asset('assets/admin/dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <!-- script src="{{ asset('assets/admin/dist/js/pages/dashboard.js') }}"></ sceipt  -->
+  <script src="{{ asset('assets/admin/dist/js/pages/dashboard.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Cropper.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>

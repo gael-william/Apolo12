@@ -118,10 +118,17 @@
                                 </div>
                             </div>
                         </div>
+                         <div class="search120">
+                            <div class="header_search position-relative">
+                                <input id="searchInput" class="prompt srch10" type="text"
+                                    placeholder="Rechercher vos produits..">
+                                <i class="uil uil-search s-icon"></i>
+                            </div><br><br>
+                        </div>
                         <!-- Category Model End -->
                         @foreach ($produits as $produit)
-                            <div class="col-lg-3 col-md-6 product-item-container"
-                                data-category="{{ strtolower($produit->category) }}">
+                            <div class="col-lg-3 col-md-6 product-item-container product-card" 
+                                data-category="{{ strtolower($produit->category) }}" data-name="{{ strtolower($produit->name) }}">
                                 <div class="product-item mb-30">
                                     <img src="{{ asset('storage/' . $produit->image_url) }}"
                                         class="card-img-top product-image" alt="{{ $produit->name }}">
