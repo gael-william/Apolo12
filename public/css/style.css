@@ -146,7 +146,7 @@ textarea {
 }
 
 p {
-	font-size: 14px;
+	font-size: 18px;
 	line-height: 26px;
 	color: #91699c;
 }
@@ -368,7 +368,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 html {
-   font-size: 14px;
+   font-size: 18px;
 }
 
 body {
@@ -2369,7 +2369,7 @@ span.like-icon {
 }
 
 .product-text-dt p {
-	font-size: 12px;
+	font-size: 18px;
     font-weight: 500;
     color: #8f91ac;
     margin-bottom: 0px;
@@ -2391,7 +2391,7 @@ span.like-icon {
 }
 
 .product-price {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
     line-height: 24px;
     color: #f55d2c;
@@ -2721,7 +2721,7 @@ span.like-icon {
 
 /* Nom du produit */
 .product-title {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: #333;
     margin: 8px 0;
@@ -2896,7 +2896,7 @@ span.like-icon {
 .no-stock p {
     display: inline-block;
     margin-right: 30px;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     color: #2b2f4c;
 }
