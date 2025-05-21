@@ -2426,7 +2426,7 @@ span.like-icon {
 
 /* *******************   featured slider************************* */
 
-.featured-slider .owl-nav .owl-next, {
+.featured-slider .owl-nav .owl-next {
 	font-size: 20px !important;
 	position: absolute;
 	right: -20px;
@@ -2721,7 +2721,7 @@ span.like-icon {
 
 /* Nom du produit */
 .product-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     color: #333;
     margin: 8px 0;
@@ -2729,7 +2729,7 @@ span.like-icon {
 
 /* Prix */
 .product-price {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     color: #f55d2c;
     margin-top: 5px;
@@ -2896,7 +2896,7 @@ span.like-icon {
 .no-stock p {
     display: inline-block;
     margin-right: 30px;
-    font-size: 18px;
+    font-size: 10px;
     font-weight: 500;
     color: #2b2f4c;
 }

@@ -99,7 +99,7 @@
         <!-- Categories Start -->
         <div class="section145">
             <div class="container">
-                <h2 class="section-title">Nos boutiques officielles</h2> <!-- Ajout du titre ici -->
+                <h2 class="section-title"> Visitez nos boutiques officielles</h2> <!-- Ajout du titre ici -->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="owl-carousel cate-slider owl-theme">
