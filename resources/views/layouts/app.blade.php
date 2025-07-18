@@ -21,12 +21,12 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet">
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/night-mode.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/night-mode.css') }}" rel="stylesheet">
 
     <!-- Vendor Stylesheets -->
-   
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 
     <link href="{{ asset('vendor/unicons-2.0.1/css/unicons.css') }}" rel="stylesheet">
@@ -352,8 +352,8 @@
     </script>
 
 
-{{-- Barre de recherche --}}
- <script>
+    {{-- Barre de recherche --}}
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
             const searchInput = document.getElementById("searchInput");
             const productCards = document.querySelectorAll(".product-card");
