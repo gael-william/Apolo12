@@ -82,10 +82,10 @@
     <div class="wrapper">
 
         <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
+        <!-- <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="{{ asset('images/wedga-logo.png') }}" alt="PFNL.COM" height="80"
                 width="80">
-        </div>
+        </div> -->
 
         @include('admin.layouts.navbar')
 

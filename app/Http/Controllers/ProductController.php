@@ -81,7 +81,7 @@ public function create($boutiqueId)
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'category' => 'required|string',
+            // 'category' => 'required|string',
             'price' => 'required|numeric',
             'certificate' => 'nullable|string',
             'description' => 'nullable|string',
@@ -93,7 +93,7 @@ public function create($boutiqueId)
         // Mettre à jour les données du produit
         $product->update([
             'name' => $request->name,
-            'category' => $request->category,
+            // 'category' => $request->category,
             'price' => $request->price,
             'certificate' => $request->certificate,
             'description' => $request->description,
@@ -153,28 +153,29 @@ public function create($boutiqueId)
     }
 
     public function welcome()
-{
-    $produitsAlimentation = Product::where('category', 'Alimentation')->latest()->take(8)->get();
-    $produitsCosmetique = Product::where('category', 'Cosmétique')->latest()->take(8)->get();
-    $produitsPharmacopee = Product::where('category', 'Pharmacopée')->latest()->take(8)->get();
-    $boutiques = Boutique::all();
+    {
+        $produitsAlimentation = Product::with('boutique')->where('category', 'Alimentation')->latest()->take(8)->get();
+        $produitsCosmetique = Product::with('boutique')->where('category', 'Cosmétique')->latest()->take(8)->get();
+        $produitsPharmacopee = Product::with('boutique')->where('category', 'Pharmacopée')->latest()->take(8)->get();
+        $boutiques = Boutique::all();
 
-    $menusLesPlusCommandes = Product::select('products.*', DB::raw('(SELECT COUNT(*) FROM commandes WHERE products.id = commandes.produit) as commandes_count'))
-        ->orderBy('commandes_count', 'desc')
-        ->limit(8)
-        ->get();
+        $menusLesPlusCommandes = Product::with('boutique')
+            ->select('products.*', DB::raw('(SELECT COUNT(*) FROM commandes WHERE products.id = commandes.produit) as commandes_count'))
+            ->orderBy('commandes_count', 'desc')
+            ->limit(8)
+            ->get();
 
-    $categoriesDynamiques = Category::whereNotIn('name', ['Alimentation', 'Cosmétique', 'Pharmacopée'])->get();
+        $categoriesDynamiques = Category::whereNotIn('name', ['Alimentation', 'Cosmétique', 'Pharmacopée'])->get();
 
-    return view('welcome', compact(
-        'produitsAlimentation',
-        'produitsCosmetique',
-        'produitsPharmacopee',
-        'boutiques',
-        'menusLesPlusCommandes',
-        'categoriesDynamiques'
-    ));
-}
+        return view('welcome', compact(
+            'produitsAlimentation',
+            'produitsCosmetique',
+            'produitsPharmacopee',
+            'boutiques',
+            'menusLesPlusCommandes',
+            'categoriesDynamiques'
+        ));
+    }
 
 public function seeAll(Request $request)
 {

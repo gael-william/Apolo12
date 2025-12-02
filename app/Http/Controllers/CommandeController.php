@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Boutique;
 use App\Models\Commande;
+use App\Models\User;
+use App\Mail\CommandeNotification;
+use App\Jobs\SendCommandeNotification;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CommandeController extends Controller
 {
@@ -26,6 +30,12 @@ class CommandeController extends Controller
                 'total' => $validated['total'],
                 'numero_telephone' => $validated['numero_telephone'],
             ]);
+
+            // Récupérer la boutique
+            $boutique = Boutique::findOrFail($validated['boutique_id']);
+            
+            // Dispatch le job pour envoyer les emails de notification
+            SendCommandeNotification::dispatch($commande, $boutique);
     
             return response()->json([
                 'success' => true,

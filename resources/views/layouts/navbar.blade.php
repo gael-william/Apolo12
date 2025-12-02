@@ -6,7 +6,7 @@
 
     <div class="offcanvas-header bs-canvas-header side-cart-header p-3">
         <div class="d-inline-block main-cart-title" id="offcanvasRightLabel">
-            My Cart <span id="cart-count">(0 Items)</span>
+            Mon panier <span id="cart-count">(0 Items)</span>
         </div> <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
             <i class="uil uil-multiply"></i>
         </button>
@@ -57,10 +57,10 @@
                         </a>
                     </li>
 
-                    <li>
+                    {{-- <li>
                         <a href="dashboard_my_wishlist.html" class="option_links" title="Wishlist"><i
                                 class='uil uil-heart icon_wishlist'></i><span class="noti_count1">3</span></a>
-                    </li>
+                    </li> --}}
 
                 </ul>
             </div>
@@ -143,9 +143,9 @@
                                  <li><a class="dropdown-item" href="forgot_password.html">Forgot Password</a></li>
                              </ul>
                          </li> --}}
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="contact_us.html">Qui sommes-nous?</a>
-                            </li>
+                            </li> --}}
                         </ul>
 
 
@@ -175,7 +175,7 @@
                     <div class="header_cart">
                         <a href="#" class="cart__btn hover-btn" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                            <i class="uil uil-shopping-cart-alt"></i><span>Cart</span>
+                            <i class="uil uil-shopping-cart-alt"></i><span>Panier</span>
                             <ins id="cart-count-btn">0</ins> <!-- Nombre d'articles -->
                             <i class="uil uil-angle-down"></i>
                         </a>

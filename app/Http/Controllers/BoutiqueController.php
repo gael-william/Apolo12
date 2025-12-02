@@ -22,7 +22,9 @@ class BoutiqueController extends Controller
 
     public function store(Request $request)
     {
+        $dd = $request->all();
         $request->validate([
+        
             'name' => 'required|string|max:255',
             'location' => 'required|string',
             'city' => 'required|string|max:255',

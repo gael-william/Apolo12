@@ -345,9 +345,127 @@
             box-shadow: 0 2px 8px rgba(238, 9, 121, 0.08);
         }
 
+        /* Toast Notification Styles */
+        .toast-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .toast {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            margin-bottom: 10px;
+            min-width: 300px;
+            max-width: 400px;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            pointer-events: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .toast.error {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .toast.warning {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #333;
+        }
+
+        .toast::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .toast-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .toast-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast-close {
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .toast-close:hover {
+            opacity: 1;
+        }
+
+        .toast-message {
+            font-size: 0.95rem;
+            line-height: 1.4;
+            opacity: 0.95;
+        }
+
+        .toast-icon {
+            font-size: 1.3rem;
+        }
+
+        .toast-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.5);
+            width: 100%;
+            transform-origin: left;
+            animation: toast-progress 3s linear forwards;
+        }
+
+        @keyframes toast-progress {
+            from {
+                transform: scaleX(1);
+            }
+            to {
+                transform: scaleX(0);
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
-
             .card-header,
             .card-body {
                 padding: 18px;
@@ -361,16 +479,31 @@
             .video-section {
                 padding: 12px;
             }
+
+            .toast-container {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+            }
+
+            .toast {
+                min-width: auto;
+                max-width: none;
+            }
         }
     </style>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
     <div class="wrapper">
-        <div class="row">
+        <div class="row mt-1">
             <div class="col-lg-8 mx-auto">
                 <div class="card">
                     <div class="card-header">
                         <input type="hidden" id="boutique_id" value="{{ $boutique->id }}">
                         <i class="fas fa-store"></i>
-                        <h1>{{ $boutique->name }}</h1>
+                        <h1 style="font-size: 15px;">{{ $boutique->name }}</h1>
                     </div>
                     <div class="card-body">
                         <div class="row align-items-center">
@@ -378,14 +511,27 @@
                                 <img src="{{ asset('storage/' . $boutique->image) }}" alt="{{ $boutique->name }}"
                                     class="img-fluid rounded shadow-sm" style="max-height: 260px;">
                             </div>
-                            <div class="col-md-7">
-                                <p><i class="fas fa-align-left text-warning"></i> <strong>Description:</strong>
-                                    {{ $boutique->description }}</p>
-                                <p><i class="fas fa-user-tie text-primary"></i> <strong>Propriétaire:</strong>
-                                    {{ $boutique->owner_name }}</p>
-                                <p><i class="fas fa-industry text-success"></i> <strong>Type d'entreprise:</strong>
-                                    {{ ucfirst($boutique->business_type) }}</p>
-                                <p><i class="fas fa-city text-info"></i> <strong>Ville:</strong> {{ $boutique->city }}</p>
+                            <div class="col-md-7 mt-2">
+                                <p class="text-dark">
+                              <i class="fas fa-align-left text-warning"></i> <strong>Description:</strong>
+                                 {{ $boutique->description }}
+                                </p>
+
+                                <p class="text-dark">
+                                 <i class="fas fa-user-tie text-primary"></i> <strong>Propriétaire:</strong>
+                                   {{ $boutique->owner_name }}
+                                </p>
+
+                                <p class="text-dark">
+                                   <i class="fas fa-industry text-success"></i> <strong>Type d'entreprise:</strong>
+                                  {{ ucfirst($boutique->business_type) }}
+                                </p>
+
+                                <p class="text-dark">
+                                   <i class="fas fa-city text-info"></i> <strong>Ville:</strong>
+                                   {{ $boutique->city }}
+                                </p>
+
                             </div>
                         </div>
                         <div class="row">
@@ -563,54 +709,181 @@
                             </div>
                         </div>
                     </div>
+                     <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+    <!-- Toast Notification JavaScript -->
     <script>
-        // Modal logic
-        document.querySelectorAll('.open-modal').forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                document.getElementById('modalProductImage').src = btn.getAttribute('data-image');
-                document.getElementById('modalProductName').textContent = btn.getAttribute('data-name');
-                document.getElementById('modalProductDescription').textContent = btn.getAttribute(
-                    'data-description');
-                document.getElementById('modalProductPrice').textContent = btn.getAttribute('data-price');
-                var modal = new bootstrap.Modal(document.getElementById('productModal'));
-                modal.show();
-            });
-        });
+        // Fonction pour créer et afficher les notifications toast
+        function showToast(message, type = 'success', duration = 3000) {
+            const toastContainer = document.getElementById('toastContainer');
+            
+            // Créer l'élément toast
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            
+            // Icônes selon le type
+            const icons = {
+                success: 'fas fa-check-circle',
+                error: 'fas fa-times-circle',
+                warning: 'fas fa-exclamation-triangle',
+                info: 'fas fa-info-circle'
+            };
+            
+            // Titres selon le type
+            const titles = {
+                success: 'Succès',
+                error: 'Erreur',
+                warning: 'Attention',
+                info: 'Information'
+            };
+            
+            toast.innerHTML = `
+                <div class="toast-progress"></div>
+                <div class="toast-header">
+                    <div class="toast-title">
+                        <i class="toast-icon ${icons[type]}"></i>
+                        ${titles[type]}
+                    </div>
+                    <button class="toast-close" onclick="this.parentElement.parentElement.remove()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="toast-message">${message}</div>
+            `;
+            
+            // Ajouter le toast au conteneur
+            toastContainer.appendChild(toast);
+            
+            // Animation d'entrée
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            // Suppression automatique
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.classList.remove('show');
+                    setTimeout(() => {
+                        if (toast.parentElement) {
+                            toast.remove();
+                        }
+                    }, 400);
+                }
+            }, duration);
+        }
 
-        // Category filter
-        document.querySelectorAll('.category-filter').forEach(function(cat) {
-            cat.addEventListener('click', function(e) {
-                e.preventDefault();
-                var category = cat.getAttribute('data-category');
-                document.querySelectorAll('.product-card').forEach(function(card) {
-                    if (category === '' || card.getAttribute('data-category') === category) {
-                        card.style.display = '';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-                var modal = bootstrap.Modal.getInstance(document.getElementById('category_model'));
-                if (modal) modal.hide();
-            });
-        });
-
-        // Search filter
-        document.getElementById('searchInput').addEventListener('input', function() {
-            var val = this.value.toLowerCase();
-            document.querySelectorAll('.product-card').forEach(function(card) {
-                var name = card.getAttribute('data-name');
-                if (name.includes(val)) {
-                    card.style.display = '';
+        // Fonction pour modifier les fonctions existantes du panier
+        document.addEventListener("DOMContentLoaded", function() {
+            // Récupérer les fonctions existantes du panier depuis le localStorage
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            
+            // Fonction pour ajouter au panier avec notification
+            function addToCartWithNotification(id, name, price, image) {
+                id = id.toString();
+                let existingProduct = cart.find(p => p.id === id);
+                
+                if (existingProduct) {
+                    existingProduct.quantity += 1;
+                    showToast(`Quantité de "${name}" augmentée dans le panier`, 'success');
                 } else {
-                    card.style.display = 'none';
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        image,
+                        quantity: 1
+                    });
+                    showToast(`"${name}" ajouté au panier avec succès !`, 'success');
+                }
+                
+                // Mettre à jour le localStorage
+                localStorage.setItem("cart", JSON.stringify(cart));
+                
+                // Mettre à jour l'interface utilisateur si la fonction existe
+                if (typeof updateCartUI === 'function') {
+                    updateCartUI();
+                }
+            }
+            
+            // Fonction pour retirer du panier avec notification
+            function removeFromCartWithNotification(id, name) {
+                id = id.toString();
+                let productIndex = cart.findIndex(p => p.id === id);
+                
+                if (productIndex !== -1) {
+                    if (cart[productIndex].quantity > 1) {
+                        cart[productIndex].quantity -= 1;
+                        showToast(`Quantité de "${name}" diminuée dans le panier`, 'warning');
+                    } else {
+                        const removedProduct = cart[productIndex];
+                        cart.splice(productIndex, 1);
+                        showToast(`"${name}" retiré du panier`, 'info');
+                    }
+                }
+                
+                // Mettre à jour le localStorage
+                localStorage.setItem("cart", JSON.stringify(cart));
+                
+                // Mettre à jour l'interface utilisateur si la fonction existe
+                if (typeof updateCartUI === 'function') {
+                    updateCartUI();
+                }
+            }
+            
+            // Remplacer les événements des boutons plus
+            document.querySelectorAll(".plus-btn").forEach(button => {
+                button.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    let productContainer = this.closest(".product-item-container");
+                    let productId = productContainer.querySelector(".open-modal").getAttribute("data-id");
+                    let productName = productContainer.querySelector(".open-modal").getAttribute("data-name");
+                    let productPrice = parseFloat(productContainer.querySelector(".open-modal").getAttribute("data-price"));
+                    let productImage = productContainer.querySelector(".product-image").src;
+                    
+                    addToCartWithNotification(productId, productName, productPrice, productImage);
+                });
+            });
+            
+            // Remplacer les événements des boutons moins
+            document.querySelectorAll(".minus-btn").forEach(button => {
+                button.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    let productContainer = this.closest(".product-item-container");
+                    let productId = productContainer.querySelector(".open-modal").getAttribute("data-id");
+                    let productName = productContainer.querySelector(".open-modal").getAttribute("data-name");
+                    
+                    removeFromCartWithNotification(productId, productName);
+                });
+            });
+            
+            // Ajouter des notifications pour les autres actions du panier
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('cart-close-btn') || e.target.closest('.cart-close-btn')) {
+                    const cartItem = e.target.closest('.cart-item');
+                    if (cartItem) {
+                        const productName = cartItem.querySelector('h4').textContent;
+                        showToast(`"${productName}" supprimé du panier`, 'info');
+                    }
                 }
             });
         });
+
+        // Fonction pour vider le panier avec notification
+        function clearCartWithNotification() {
+            showToast('Panier vidé avec succès', 'success');
+            if (typeof window.clearCart === 'function') {
+                window.clearCart();
+            }
+        }
     </script>
+  
 @endsection
+
