@@ -251,6 +251,8 @@
                     emptyCartMessage.style.display = "block";
                     totalElement.textContent = "0 FCFA";
                     checkoutButton.style.display = "none";
+                    // Si le panier est vide, supprimer l'association boutique
+                    localStorage.removeItem('cart_boutique_id');
                 } else {
                     emptyCartMessage.style.display = "none";
                     checkoutButton.style.display = "block";
@@ -291,6 +293,7 @@
             window.clearCart = function() {
                 cart = [];
                 localStorage.removeItem("cart");
+                localStorage.removeItem('cart_boutique_id');
                 updateCartUI();
             }
 
@@ -324,6 +327,27 @@
 
             function addToCart(id, name, price, image) {
                 id = id.toString();
+                // Récupérer la boutique du produit (si présente)
+                let productElem = document.querySelector(`.product-item-container[data-name][data-category] [data-id='${id}']`) || null;
+                let boutiqueId = null;
+                // essayer à partir du bouton open-modal
+                const openBtn = document.querySelector(`.open-modal[data-id='${id}']`);
+                if (openBtn && openBtn.getAttribute('data-boutique')) {
+                    boutiqueId = openBtn.getAttribute('data-boutique').toString();
+                } else if (productElem && productElem.closest('[data-boutique]')) {
+                    boutiqueId = productElem.closest('[data-boutique]').getAttribute('data-boutique');
+                }
+
+                // Vérifier la contrainte boutique unique pour le panier
+                const existingBoutiqueId = localStorage.getItem('cart_boutique_id');
+                if (!existingBoutiqueId && boutiqueId) {
+                    localStorage.setItem('cart_boutique_id', boutiqueId);
+                } else if (existingBoutiqueId && boutiqueId && existingBoutiqueId !== boutiqueId) {
+                    // Empêcher l'ajout et informer l'utilisateur
+                    showToast("Le panier contient déjà des produits d'une autre boutique. Videz le panier pour ajouter des produits d'ici.", 'error');
+                    return;
+                }
+
                 let existingProduct = cart.find(p => p.id === id);
                 if (existingProduct) {
                     existingProduct.quantity += 1;
@@ -381,7 +405,11 @@
 
         async function handleCheckout() {
             const userPhone = document.getElementById("userPhone")?.value;
-            const boutiqueId = document.getElementById("boutique_id")?.value;
+            // Priorité: boutique_id présent dans la page sinon fallback sur localStorage
+            let boutiqueId = document.getElementById("boutique_id")?.value;
+            if (!boutiqueId) {
+                boutiqueId = localStorage.getItem('cart_boutique_id');
+            }
 
             if (!userPhone || !boutiqueId) {
                 alert("Numéro ou boutique manquant.");

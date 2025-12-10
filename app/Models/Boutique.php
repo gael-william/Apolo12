@@ -26,6 +26,10 @@ class Boutique extends Model
     {
         return $this->hasMany(Product::class, 'boutique_id');
     }
-    
+
+    public function admins()
+    {
+        return $this->hasMany(User::class, 'boutique_id');
+    }
 }
 

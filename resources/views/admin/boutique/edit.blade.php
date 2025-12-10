@@ -6,8 +6,9 @@
         <!-- Formulaire -->
         <div class="col-md-8">
             <div class="card mt-4">
-                <div class="card-header bg-primary text-white">
-                    Modifier une Boutique
+                <div class="card-header bg-primary text-white d-flex align-items-center justify-content-between">
+                    <div>Modifier une Boutique</div>
+                    <a href="{{ route('admin.boutiques.index') }}" class="btn btn-light btn-sm">&larr; Retour</a>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('admin.boutiques.update', $boutique->id) }}" method="POST" enctype="multipart/form-data" onsubmit="prepareImage()">

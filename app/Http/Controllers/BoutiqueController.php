@@ -28,7 +28,14 @@ class BoutiqueController extends Controller
             'name' => 'required|string|max:255',
             'location' => 'required|string',
             'city' => 'required|string|max:255',
-            'description' => 'nullable|string',
+            'description' => [
+                'nullable','string',
+                function($attribute, $value, $fail) {
+                    if ($value && str_word_count($value) > 10) {
+                        $fail('La description doit contenir au maximum 10 mots.');
+                    }
+                }
+            ],
             'owner_name' => 'required|string|max:255',
             'phone' => 'required|string|max:20',
             'business_type' => 'required|string',
@@ -79,7 +86,14 @@ public function update(Request $request, $id)
         'name' => 'required|string|max:255',
         'location' => 'required|string',
         'city' => 'required|string|max:255',
-        'description' => 'nullable|string',
+        'description' => [
+            'nullable','string',
+            function($attribute, $value, $fail) {
+                if ($value && str_word_count($value) > 10) {
+                    $fail('La description doit contenir au maximum 10 mots.');
+                }
+            }
+        ],
         'owner_name' => 'required|string|max:255',
         'phone' => 'required|string|max:20',
         'business_type' => 'required|string',

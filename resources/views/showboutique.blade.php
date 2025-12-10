@@ -640,7 +640,8 @@
                         @foreach ($produits as $produit)
                             <div class="col-lg-3 col-md-6 product-item-container product-card mb-4"
                                 data-category="{{ strtolower($produit->category) }}"
-                                data-name="{{ strtolower($produit->name) }}">
+                                data-name="{{ strtolower($produit->name) }}"
+                                data-boutique="{{ $boutique->id }}">
                                 <div class="product-item">
                                     <img src="{{ asset('storage/' . $produit->image_url) }}"
                                         class="card-img-top product-image" alt="{{ $produit->name }}">
@@ -667,7 +668,8 @@
                                         <button class="btn btn-success open-modal" data-id="{{ $produit->id }}"
                                             data-name="{{ $produit->name }}" data-price="{{ $produit->price }}"
                                             data-description="{{ $produit->description }}"
-                                            data-image="{{ asset('storage/' . $produit->image_url) }}">
+                                            data-image="{{ asset('storage/' . $produit->image_url) }}"
+                                            data-boutique="{{ $boutique->id }}">
                                             <i class="fas fa-eye"></i> Voir détails
                                         </button>
                                         <div class="qty-cart">
@@ -788,8 +790,27 @@
             // Fonction pour ajouter au panier avec notification
             function addToCartWithNotification(id, name, price, image) {
                 id = id.toString();
+
+                // Déterminer la boutique du produit (depuis le container ou le bouton)
+                let boutiqueId = null;
+                const openBtn = document.querySelector(`.open-modal[data-id='${id}']`);
+                if (openBtn && openBtn.getAttribute('data-boutique')) {
+                    boutiqueId = openBtn.getAttribute('data-boutique').toString();
+                } else {
+                    const container = document.querySelector(`.product-item-container[data-boutique]`);
+                    if (container) boutiqueId = container.getAttribute('data-boutique');
+                }
+
+                const existingBoutiqueId = localStorage.getItem('cart_boutique_id');
+                if (!existingBoutiqueId && boutiqueId) {
+                    localStorage.setItem('cart_boutique_id', boutiqueId);
+                } else if (existingBoutiqueId && boutiqueId && existingBoutiqueId !== boutiqueId) {
+                    showToast("Le panier contient déjà des produits d'une autre boutique. Videz le panier pour ajouter des produits d'ici.", 'error');
+                    return;
+                }
+
                 let existingProduct = cart.find(p => p.id === id);
-                
+
                 if (existingProduct) {
                     existingProduct.quantity += 1;
                     showToast(`Quantité de "${name}" augmentée dans le panier`, 'success');
@@ -803,10 +824,10 @@
                     });
                     showToast(`"${name}" ajouté au panier avec succès !`, 'success');
                 }
-                
+
                 // Mettre à jour le localStorage
                 localStorage.setItem("cart", JSON.stringify(cart));
-                
+
                 // Mettre à jour l'interface utilisateur si la fonction existe
                 if (typeof updateCartUI === 'function') {
                     updateCartUI();

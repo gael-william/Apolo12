@@ -5,8 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card mt-4">
-                <div class="card-header bg-primary text-white">
-                    Modifier le Produit : {{ $product->name }}
+                <div class="card-header bg-primary text-white d-flex align-items-center justify-content-between">
+                    <div>Modifier le Produit : {{ $product->name }}</div>
+                    <a href="{{ route('admin.boutiques.products', $boutique->id) }}" class="btn btn-light btn-sm">&larr; Retour</a>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('admin.boutiques.products.update', [$boutique->id, $product->id]) }}" method="POST" enctype="multipart/form-data">

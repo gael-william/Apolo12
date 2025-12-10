@@ -3,8 +3,9 @@
 @section('content')
 <div class="content-wrapper">
     <section class="content-header">
-        <div class="card-header bg-warning text-white">
-            <h4>Modifier un utilisateur</h4>
+        <div class="card-header bg-warning text-white d-flex align-items-center justify-content-between">
+            <h4 class="mb-0">Modifier un utilisateur</h4>
+            <a href="{{ route('admin.users.index') }}" class="btn btn-light btn-sm">&larr; Retour</a>
         </div>
         <div class="card-body">
             <form action="{{ route('admin.users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
@@ -62,9 +63,9 @@
                             </select>
                         </div>
 
-                        {{-- <div class="mb-3">
+                        <div class="mb-3">
                             <label class="form-label">Boutique :</label>
-                            <select name="boutique_id" class="form-control">
+                            <select name="boutique_id" class="form-control" id="boutique_select">
                                 <option value="">Aucune</option>
                                 @foreach($boutiques as $boutique)
                                     <option value="{{ $boutique->id }}" {{ $user->boutique_id == $boutique->id ? 'selected' : '' }}>
@@ -72,19 +73,52 @@
                                     </option>
                                 @endforeach
                             </select>
-                        </div> --}}
-                        {{-- <div class="mb-3">
-                            <label>Mot de passe (laisser vide pour ne pas modifier) :</label>
-                            <input type="password" name="password" autocomplete="off">
-                        </div> --}}
+                            <small class="text-muted" id="boutique_hint">Les admins doivent être assignés à une boutique</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Mot de passe (laisser vide pour ne pas modifier) :</label>
+                            <input type="password" name="password" class="form-control" minlength="8">
+                            <small class="text-muted">Minimum 8 caractères si modifié</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Confirmer le mot de passe :</label>
+                            <input type="password" name="password_confirmation" class="form-control" minlength="8">
+                        </div>
                     </div>
                 </div>
 
                 <div class="text-center">
                     <button type="submit" class="btn btn-warning">Modifier</button>
+                    <a href="{{ route('admin.users.index') }}" class="btn btn-secondary">Annuler</a>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const roleSelect = document.querySelector('select[name="role"]');
+        const boutiqueSelect = document.getElementById('boutique_select');
+        const boutiquHint = document.getElementById('boutique_hint');
+
+        function updateBoutiqueRequirement() {
+            if (roleSelect.value === 'admin') {
+                boutiqueSelect.required = true;
+                boutiquHint.textContent = '* Obligatoire pour les admins';
+                if (!boutiqueSelect.value) {
+                    boutiqueSelect.classList.add('is-invalid');
+                }
+            } else {
+                boutiqueSelect.required = false;
+                boutiquHint.textContent = 'Les super admins n\'ont pas besoin de boutique assignée';
+                boutiqueSelect.classList.remove('is-invalid');
+            }
+        }
+
+        roleSelect.addEventListener('change', updateBoutiqueRequirement);
+        updateBoutiqueRequirement();
+    });
+</script>
 @endsection

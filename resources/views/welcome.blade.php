@@ -164,7 +164,8 @@
                                             <button class="btn btn-success open-modal" data-id="{{ $product->id }}"
                                                 data-name="{{ $product->name }}" data-price="{{ $product->price }}"
                                                 data-description="{{ $product->description }}"
-                                                data-image="{{ asset('storage/' . $product->image_url) }}">
+                                                data-image="{{ asset('storage/' . $product->image_url) }}"
+                                                data-boutique="{{ $product->boutique->id }}">
                                                 Voir détails
                                             </button>
                                         </div>
@@ -269,7 +270,8 @@
                                             <button class="btn btn-success open-modal" data-id="{{ $produit->id }}"
                                                 data-name="{{ $produit->name }}" data-price="{{ $produit->price }}"
                                                 data-description="{{ $produit->description }}"
-                                                data-image="{{ asset('storage/' . $produit->image_url) }}">
+                                                data-image="{{ asset('storage/' . $produit->image_url) }}"
+                                                data-boutique="{{ $produit->boutique->id }}">
                                                 Voir détails
                                             </button>
                                             {{-- <div class="qty-cart">
@@ -335,7 +337,8 @@
                                             <button class="btn btn-success open-modal" data-id="{{ $produit->id }}"
                                                 data-name="{{ $produit->name }}" data-price="{{ $produit->price }}"
                                                 data-description="{{ $produit->description }}"
-                                                data-image="{{ asset('storage/' . $produit->image_url) }}">
+                                                data-image="{{ asset('storage/' . $produit->image_url) }}"
+                                                data-boutique="{{ $produit->boutique->id }}">
                                                 Voir détails
                                             </button>
                                            
@@ -392,7 +395,8 @@
                                             <button class="btn btn-success open-modal" data-id="{{ $produit->id }}"
                                                 data-name="{{ $produit->name }}" data-price="{{ $produit->price }}"
                                                 data-description="{{ $produit->description }}"
-                                                data-image="{{ asset('storage/' . $produit->image_url) }}">
+                                                data-image="{{ asset('storage/' . $produit->image_url) }}"
+                                                data-boutique="{{ $produit->boutique->id }}">
                                                 Voir détails
                                             </button>
                                          

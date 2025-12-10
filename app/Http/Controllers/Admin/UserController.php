@@ -22,17 +22,21 @@ class UserController extends Controller {
 
     public function store(Request $request) {
         $request->validate([
-            'name' => 'required',
-            'prenom' => 'required',
-            'cnib' => 'required|unique:users,cnib',
+            'name' => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
+            'cnib' => 'required|unique:users,cnib|string|max:50',
             'email' => 'required|email|unique:users,email',
-            'telephone' => 'required|unique:users,telephone',
-            'password' => 'required|confirmed',
-            'sexe' => 'required',
+            'telephone' => 'required|unique:users,telephone|string|max:20',
+            'password' => 'required|min:8|confirmed',
+            'sexe' => 'required|in:Homme,Femme',
             'photo_profil' => 'nullable|image|max:2048',
             'role' => 'required|in:super_admin,admin',
             'boutique_id' => 'nullable|exists:boutiques,id',
         ]);
+
+        if ($request->role === 'admin' && !$request->boutique_id) {
+            return back()->withInput()->withErrors(['boutique_id' => 'Un admin doit être assigné à une boutique.']);
+        }
 
         $photoPath = null;
         if ($request->hasFile('photo_profil')) {
@@ -42,17 +46,17 @@ class UserController extends Controller {
         User::create([
             'name' => $request->name,
             'prenom' => $request->prenom,
-            'cnib' => 'B' . $request->cnib,
+            'cnib' => $request->cnib,
             'email' => $request->email,
             'telephone' => $request->telephone,
             'password' => Hash::make($request->password),
             'sexe' => $request->sexe,
             'photo_profil' => $photoPath,
             'role' => $request->role,
-            'boutique_id' => $request->boutique_id,
+            'boutique_id' => $request->role === 'admin' ? $request->boutique_id : null,
         ]);
 
-        return redirect()->route('admin.users.index')->with('success', 'Utilisateur ajouté !');
+        return redirect()->route('admin.users.index')->with('success', 'Utilisateur créé avec succès !');
     }
 
     public function edit(User $user) {
@@ -62,17 +66,21 @@ class UserController extends Controller {
     
     public function update(Request $request, User $user) {
         $request->validate([
-            'name' => 'required',
-            'prenom' => 'required',
-            'cnib' => 'required|unique:users,cnib,' . $user->id,
+            'name' => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
+            'cnib' => 'required|unique:users,cnib,' . $user->id . '|string|max:50',
             'email' => 'required|email|unique:users,email,' . $user->id,
-            'telephone' => 'required|unique:users,telephone,' . $user->id,
-            'password' => 'nullable|confirmed',
-            'sexe' => 'required',
+            'telephone' => 'required|unique:users,telephone,' . $user->id . '|string|max:20',
+            'password' => 'nullable|min:8|confirmed',
+            'sexe' => 'required|in:Homme,Femme',
             'photo_profil' => 'nullable|image|max:2048',
             'role' => 'required|in:super_admin,admin',
             'boutique_id' => 'nullable|exists:boutiques,id',
         ]);
+
+        if ($request->role === 'admin' && !$request->boutique_id) {
+            return back()->withInput()->withErrors(['boutique_id' => 'Un admin doit être assigné à une boutique.']);
+        }
     
         $photoPath = $user->photo_profil;
         if ($request->hasFile('photo_profil')) {
@@ -85,17 +93,17 @@ class UserController extends Controller {
         $user->update([
             'name' => $request->name,
             'prenom' => $request->prenom,
-            'cnib' => 'B' . $request->cnib,
+            'cnib' => $request->cnib,
             'email' => $request->email,
             'telephone' => $request->telephone,
             'password' => $request->password ? Hash::make($request->password) : $user->password,
             'sexe' => $request->sexe,
             'photo_profil' => $photoPath,
             'role' => $request->role,
-            'boutique_id' => $request->boutique_id,
+            'boutique_id' => $request->role === 'admin' ? $request->boutique_id : null,
         ]);
     
-        return redirect()->route('admin.users.index')->with('success', 'Utilisateur mis à jour !');
+        return redirect()->route('admin.users.index')->with('success', 'Utilisateur mis à jour avec succès !');
     }
 
     public function destroy(User $user) {
