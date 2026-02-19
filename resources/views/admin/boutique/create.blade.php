@@ -8,7 +8,7 @@
                 <div class="card mt-4"> <!-- Ajouter une marge en haut -->
                 <div class="card-header bg-primary text-white d-flex align-items-center justify-content-between">
                     <div>Ajouter une Boutique</div>
-                    <a href="{{ route('admin.boutiques.index') }}" class="btn btn-light btn-sm">&larr; Retour</a>
+                    <a href="{{ route('admin.boutiques.index') }}" class="btn btn-danger btn-sm">&larr; Retour</a>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('admin.boutiques.store') }}" method="POST" enctype="multipart/form-data" onsubmit="prepareImage()">

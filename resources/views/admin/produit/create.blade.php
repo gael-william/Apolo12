@@ -7,7 +7,7 @@
                 <div class="card mt-4">
                     <div class="card-header bg-primary text-white d-flex align-items-center justify-content-between">
                         <div>Ajouter un Produit pour la boutique : {{ $boutique->name }}</div>
-                        <a href="{{ route('admin.boutiques.products', $boutique->id) }}" class="btn btn-light btn-sm">&larr; Retour</a>
+                        <a href="{{ route('admin.boutiques.products', $boutique->id) }}" class="btn btn-danger btn-sm">&larr; Retour</a>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('admin.boutiques.products.store', $boutique->id) }}" method="POST"

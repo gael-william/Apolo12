@@ -10,45 +10,68 @@ use App\Jobs\SendCommandeNotification;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Twilio\Rest\Client;
+use Illuminate\Support\Facades\Log;
 
 class CommandeController extends Controller
 {
-    public function store(Request $request)
-    {
-        try {
-            $validated = $request->validate([
-                'numero_telephone' => 'required|string',
-                'panier' => 'required|array',
-                'total' => 'required|numeric',
-                'boutique_id' => 'required|exists:boutiques,id',
-            ]);
-    
-            $commande = Commande::create([
-                'boutique_id' => $validated['boutique_id'],
-                'produit' => json_encode($validated['panier']),
-                'quantite' => array_sum(array_column($validated['panier'], 'quantity')),
-                'total' => $validated['total'],
-                'numero_telephone' => $validated['numero_telephone'],
-            ]);
+   public function store(Request $request)
+{
+    try {
+        $validated = $request->validate([
+            'numero_telephone' => 'required|string',
+            'panier' => 'required|array',
+            'total' => 'required|numeric',
+            'boutique_id' => 'required|exists:boutiques,id',
+        ]);
 
-            // Récupérer la boutique
-            $boutique = Boutique::findOrFail($validated['boutique_id']);
-            
-            // Dispatch le job pour envoyer les emails de notification
-            SendCommandeNotification::dispatch($commande, $boutique);
-    
-            return response()->json([
-                'success' => true,
-                'redirect_url' => route('commande.voir', $commande->id),
-            ]);
-    
-        } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => $e->getMessage(),
-            ], 500);
+        $commande = Commande::create([
+            'boutique_id' => $validated['boutique_id'],
+            'produit' => json_encode($validated['panier']),
+            'quantite' => array_sum(array_column($validated['panier'], 'quantity')),
+            'total' => $validated['total'],
+            'numero_telephone' => $validated['numero_telephone'],
+        ]);
+
+        $boutique = Boutique::findOrFail($validated['boutique_id']);
+
+        // 🔥 ENVOI WHATSAPP DIRECTEMENT ICI
+        try {
+
+            $twilio = new Client(
+                env('TWILIO_SID'),
+                env('TWILIO_TOKEN')
+            );
+
+            $numeroBoutique = "whatsapp:+".$boutique->phone;
+
+            $twilio->messages->create(
+                $numeroBoutique,
+                [
+                    "from" => env('TWILIO_WHATSAPP_FROM'),
+                    "body" => "🛒 Nouvelle commande reçue !\n"
+                            . "Total : ".$commande->total." FCFA\n"
+                            . "Client : ".$commande->numero_telephone
+                ]
+            );
+
+        } catch (\Exception $twilioError) {
+            Log::error("Erreur Twilio : ".$twilioError->getMessage());
         }
+
+        return response()->json([
+            'success' => true,
+            'redirect_url' => route('commande.voir', $commande->id),
+        ]);
+
+    } catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'message' => $e->getMessage(),
+        ], 500);
     }
+}
+
     
 
     public function generatePdf($id)
