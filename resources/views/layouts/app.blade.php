@@ -86,99 +86,68 @@
         .toast-container {
             position: fixed;
             top: 20px;
-            right: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 9999;
             pointer-events: none;
         }
 
         .toast {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #28a745;
             color: white;
-            padding: 16px 20px;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-            margin-bottom: 10px;
-            min-width: 300px;
-            max-width: 400px;
-            transform: translateX(100%);
+            padding: 10px 14px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            margin-bottom: 8px;
+            min-width: 240px;
+            max-width: 320px;
+            transform: translateY(-100%);
             opacity: 0;
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 0.3s ease;
             pointer-events: auto;
             position: relative;
             overflow: hidden;
-        }
-
-        .toast.show {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        .toast.success {
-            background: linear-gradient(135deg,rgb(19, 108, 4) 0%,rgb(19, 108, 4) 100%);
-        }
-
-        .toast.error {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-        }
-
-        .toast.warning {
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            color: #333;
-        }
-
-        .toast::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .toast-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 8px;
-        }
-
-        .toast-title {
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .toast-close {
-            background: none;
-            border: none;
-            color: inherit;
-            font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: opacity 0.2s;
-            padding: 0;
-            width: 24px;
-            height: 24px;
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+        }
+
+        .toast.error {
+            background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        }
+
+        .toast.warning {
+            background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+            color: #000;
+        }
+
+        .toast.info {
+            background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+        }
+
+        .toast-icon {
+            font-size: 1rem;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .toast-close:hover {
-            opacity: 1;
-        }
-
         .toast-message {
-            font-size: 0.95rem;
-            line-height: 1.4;
-            opacity: 0.95;
-        }
-
-        .toast-icon {
-            font-size: 1.3rem;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            flex: 1;
+            font-weight: 500;
         }
 
         .toast-progress {
@@ -189,7 +158,7 @@
             background: rgba(255, 255, 255, 0.5);
             width: 100%;
             transform-origin: left;
-            animation: toast-progress 3s linear forwards;
+            animation: toast-progress 0.7s linear forwards;
         }
 
         @keyframes toast-progress {
@@ -204,8 +173,9 @@
         @media (max-width: 768px) {
             .toast-container {
                 top: 10px;
-                right: 10px;
                 left: 10px;
+                right: 10px;
+                transform: none;
             }
 
             .toast {
@@ -227,6 +197,49 @@
     <script src="{{ asset('js/night-mode.js') }}"></script>
 
     <script>
+        // Toast Notification Function
+        function showToast(message, type = 'success', duration = 1000) {
+            const toastContainer = document.getElementById('toastContainer');
+            
+            // Create toast element
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            
+            // Icons
+            const icons = {
+                success: 'fas fa-check',
+                error: 'fas fa-exclamation-circle',
+                warning: 'fas fa-exclamation',
+                info: 'fas fa-info-circle'
+            };
+            
+            toast.innerHTML = `
+                <div class="toast-progress"></div>
+                <i class="toast-icon ${icons[type]}"></i>
+                <div class="toast-message">${message}</div>
+            `;
+            
+            // Add to container
+            toastContainer.appendChild(toast);
+            
+            // Show animation
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            // Auto remove
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.classList.remove('show');
+                    setTimeout(() => {
+                        if (toast.parentElement) {
+                            toast.remove();
+                        }
+                    }, 300);
+                }
+            }, duration);
+        }
+
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
@@ -297,33 +310,8 @@
                 updateCartUI();
             }
 
-            function bindCartEvents() {
-                document.querySelectorAll(".plus-btn").forEach(btn => {
-                    btn.addEventListener("click", function() {
-                        let productId = this.getAttribute("data-id");
-                        let product = cart.find(p => p.id === productId);
-                        if (product) {
-                            product.quantity += 1;
-                            updateCartUI();
-                        }
-                    });
-                });
-
-                document.querySelectorAll(".minus-btn").forEach(btn => {
-                    btn.addEventListener("click", function() {
-                        let productId = this.getAttribute("data-id");
-                        removeFromCart(productId);
-                    });
-                });
-
-                document.querySelectorAll(".cart-close-btn").forEach(btn => {
-                    btn.addEventListener("click", function() {
-                        let productId = this.getAttribute("data-id");
-                        cart = cart.filter(p => p.id !== productId);
-                        updateCartUI();
-                    });
-                });
-            }
+            // bindCartEvents left intentionally empty — using delegated event handlers instead
+            function bindCartEvents() {}
 
             function addToCart(id, name, price, image) {
                 id = id.toString();
@@ -376,28 +364,78 @@
                 updateCartUI();
             }
 
-            document.querySelectorAll(".plus-btn").forEach(button => {
-                button.addEventListener("click", function() {
-                    let productContainer = this.closest(".product-item-container");
-                    let productId = productContainer.querySelector(".open-modal").getAttribute(
-                        "data-id");
-                    let productName = productContainer.querySelector(".open-modal").getAttribute(
-                        "data-name");
-                    let productPrice = parseFloat(productContainer.querySelector(".open-modal")
-                        .getAttribute("data-price"));
-                    let productImage = productContainer.querySelector(".product-image").src;
+            // Use event delegation to handle plus/minus/close buttons both in product list and in side-cart
+            document.addEventListener('click', function(e) {
+                const plus = e.target.closest('.plus-btn');
+                const minus = e.target.closest('.minus-btn');
+                const closeBtn = e.target.closest('.cart-close-btn');
 
+                if (plus) {
+                    // If clicked inside side-cart (.cart-item)
+                    const cartItem = plus.closest('.cart-item');
+                    if (cartItem) {
+                        const pid = plus.getAttribute('data-id') || cartItem.getAttribute('data-id');
+                        if (!pid) return;
+                        const idStr = pid.toString();
+                        let existing = cart.find(p => p.id === idStr);
+                        if (existing) {
+                            existing.quantity += 1;
+                        } else {
+                            // fallback: try to find product info from product list
+                            const openBtn = document.querySelector(`.open-modal[data-id='${idStr}']`);
+                            if (openBtn) {
+                                addToCart(idStr, openBtn.getAttribute('data-name'), parseFloat(openBtn.getAttribute('data-price')) || 0, document.querySelector(`.product-item-container[data-boutique] .product-image`)?.src || '');
+                                return;
+                            }
+                        }
+                        updateCartUI();
+                        return;
+                    }
+
+                    // Else: clicked in product listing
+                    const productContainer = plus.closest('.product-item-container');
+                    if (!productContainer) return;
+                    const openBtn = productContainer.querySelector('.open-modal');
+                    if (!openBtn) return;
+                    const productId = openBtn.getAttribute('data-id');
+                    const productName = openBtn.getAttribute('data-name');
+                    const productPrice = parseFloat(openBtn.getAttribute('data-price')) || 0;
+                    const productImage = productContainer.querySelector('.product-image')?.src || '';
                     addToCart(productId, productName, productPrice, productImage);
-                });
-            });
+                }
 
-            document.querySelectorAll(".minus-btn").forEach(button => {
-                button.addEventListener("click", function() {
-                    let productContainer = this.closest(".product-item-container");
-                    let productId = productContainer.querySelector(".open-modal").getAttribute(
-                        "data-id");
+                if (minus) {
+                    const cartItem = minus.closest('.cart-item');
+                    if (cartItem) {
+                        const pid = minus.getAttribute('data-id') || cartItem.getAttribute('data-id');
+                        if (!pid) return;
+                        const idStr = pid.toString();
+                        let productIndex = cart.findIndex(p => p.id === idStr);
+                        if (productIndex !== -1) {
+                            if (cart[productIndex].quantity > 1) {
+                                cart[productIndex].quantity -= 1;
+                            } else {
+                                cart.splice(productIndex, 1);
+                            }
+                        }
+                        updateCartUI();
+                        return;
+                    }
+
+                    // Else: minus in product listing - fallback to product container
+                    const productContainer = minus.closest('.product-item-container');
+                    if (!productContainer) return;
+                    const openBtn = productContainer.querySelector('.open-modal');
+                    if (!openBtn) return;
+                    const productId = openBtn.getAttribute('data-id');
                     removeFromCart(productId);
-                });
+                }
+
+                if (closeBtn) {
+                    const productId = closeBtn.getAttribute('data-id');
+                    cart = cart.filter(p => p.id !== productId);
+                    updateCartUI();
+                }
             });
 
             updateCartUI();

@@ -160,7 +160,8 @@ public function create($boutiqueId)
         $boutiques = Boutique::all();
 
         $menusLesPlusCommandes = Product::with('boutique')
-            ->select('products.*', DB::raw('(SELECT COUNT(*) FROM commandes WHERE products.id = commandes.produit) as commandes_count'))
+            ->select('products.*', DB::raw('(SELECT COUNT(*) FROM commandes WHERE JSON_EXTRACT(commandes.produit, "$[0].id") = products.id) as commandes_count'))
+            ->having('commandes_count', '>', 0)
             ->orderBy('commandes_count', 'desc')
             ->limit(8)
             ->get();

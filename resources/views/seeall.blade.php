@@ -24,24 +24,24 @@
             <div class="product-list-view">
                 <div class="row">
                     @foreach ($produits as $produit)
-                    <div class="col-lg-3 col-md-6 product-card" data-name="{{ strtolower($produit->name) }}">
+                    <div class="col-lg-3 col-md-6 col-6 product-card" data-name="{{ strtolower($produit->name) }}">
                         <div class="product-item mb-30">
                             {{-- <a href="{{ route('products.show', $produit->id) }}" class="product-img"> --}}
                             <img src="{{ asset('storage/' . $produit->image_url) }}"
                                 class="card-img-top product-image" alt="{{ $produit->name }}">
-                 <div class="product-absolute-options">
-                                            <span class="offer-badge-1">New</span>
-                                            <span class="like-icon" title="wishlist"></span>
-                                        </div>
-                                        </a>
-                                        <div class="product-text-dt">
-                                            <!--<p>Stock<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span>-->
-                                            </p>
-                                            <a href="{{ route('boutique.show', ['id' => $produit->boutique->id]) }}"
-                                                class="btn btn-sm d-flex align-items-center justify-content-center"
-                                                style="background-color: #f57c00; color: white; border-radius: 10px; font-size: 0.78rem; padding: 2px 8px;">
-                                                <i class="fas fa-store me-1"></i> Visiter la boutique
-                                            </a>
+                            <div class="product-absolute-options">
+                                <span class="offer-badge-1">New</span>
+                                <span class="like-icon" title="wishlist"></span>
+                            </div>
+                            </a>
+                            <div class="product-text-dt">
+                                <!--<p>Stock<span>{{ $produit->stock > 0 ? 'In Stock' : 'Out of Stock' }}</span>-->
+                                </p>
+                                <a href="{{ route('boutique.show', ['id' => $produit->boutique->id]) }}"
+                                    class="btn btn-sm d-flex align-items-center justify-content-center"
+                                    style="background-color: #f57c00; color: white; border-radius: 10px; font-size: 0.78rem; padding: 2px 8px;">
+                                    <i class="fas fa-store me-1"></i> Visiter la boutique
+                                </a>
 
                                 <h4>{{ $produit->name }}</h4>
                                 <div class="product-price">{{ $produit->price }} F CFA</div>
@@ -82,6 +82,9 @@
                         <p><strong>Prix :</strong> <span id="modalProductPrice"></span> F CFA</p>
                     </div>
                 </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fermer</button>
             </div>
         </div>
     </div>
